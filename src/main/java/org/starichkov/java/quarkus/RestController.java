@@ -2,6 +2,7 @@ package org.starichkov.java.quarkus;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.starichkov.java.quarkus.dto.Jedi;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;

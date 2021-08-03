@@ -3,6 +3,7 @@ package org.starichkov.java.quarkus;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.starichkov.java.quarkus.dto.Jedi;
 
 import java.util.*;
 

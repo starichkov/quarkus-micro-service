@@ -1,9 +1,10 @@
 package org.starichkov.java.quarkus.impl;
 
-import org.starichkov.java.quarkus.Jedi;
+import org.starichkov.java.quarkus.dto.Jedi;
 import org.starichkov.java.quarkus.JediService;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Alternative;
 import java.util.*;
 
 /**
@@ -11,6 +12,7 @@ import java.util.*;
  * @since 02.08.2021 20:29
  */
 @ApplicationScoped
+@Alternative
 public class InMemoryJediService implements JediService {
 
     private final Map<String, Jedi> jediOrder = Map.of(

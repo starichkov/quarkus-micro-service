@@ -1,0 +1,17 @@
+database:
+  schema: quarkus_example
+
+quarkus:
+  datasource:
+    username: ${database.username}
+    password: ${database.password}
+    db-kind: mysql
+    jdbc:
+      url: jdbc:mysql://localhost:3306/${database.schema}
+      driver: com.mysql.cj.jdbc.Driver
+  flyway:
+    migrate-at-start: true
+    schemas: ${database.schema}
+  hibernate-orm:
+    database:
+      default-schema: ${database.schema}

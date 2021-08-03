@@ -1,0 +1,13 @@
+GET http://localhost:8080/examples/quarkus/plain
+
+###
+
+GET http://localhost:8080/examples/quarkus/jedi/Obi-Wan
+
+###
+
+GET http://localhost:8080/examples/quarkus/jedi/Anakin
+
+###
+
+GET http://localhost:8080/examples/quarkus/jedi/Kirk
