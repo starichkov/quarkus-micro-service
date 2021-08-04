@@ -11,3 +11,9 @@ quarkus:
   hibernate-orm:
     log:
       sql: true
+  log:
+    category:
+      "com.mysql.cj.jdbc":
+        level: trace
+      "org.hibernate":
+        level: trace

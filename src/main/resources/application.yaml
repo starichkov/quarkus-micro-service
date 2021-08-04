@@ -1,5 +1,7 @@
 database:
   schema: quarkus_example
+  host: localhost
+  port: 3306
 
 quarkus:
   datasource:
@@ -7,7 +9,7 @@ quarkus:
     password: ${database.password}
     db-kind: mysql
     jdbc:
-      url: jdbc:mysql://localhost:3306/${database.schema}
+      url: jdbc:mysql://${database.host}:${database.port}/${database.schema}
       driver: com.mysql.cj.jdbc.Driver
   flyway:
     migrate-at-start: true

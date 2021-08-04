@@ -1,0 +1,58 @@
+####
+# This Dockerfile is used in order to build a container that runs the Quarkus application in JVM mode
+#
+# Before building the container image run:
+#
+# ./mvnw package
+#
+# Then, build the image with:
+#
+# docker build -f src/main/docker/Dockerfile.jvm -t quarkus/quarkus-rest-example-jvm .
+#
+# Then run the container using:
+#
+# docker run -i --rm -p 8080:8080 quarkus/quarkus-rest-example-jvm
+#
+# If you want to include the debug port into your docker image
+# you will have to expose the debug port (default 5005) like this :  EXPOSE 8080 5005
+#
+# Then run the container using :
+#
+# docker run -i --rm -p 8080:8080 -p 5005:5005 -e JAVA_ENABLE_DEBUG="true" quarkus/quarkus-rest-example-jvm
+#
+###
+#FROM registry.access.redhat.com/ubi8/ubi-minimal:8.4
+
+FROM alpine:3.14
+RUN apk update && apk upgrade
+RUN apk --no-cache add openjdk11-jre-headless --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
+
+ENV RUN_USER=java-runner
+ENV RUN_GROUP=${RUN_USER}
+ENV RUN_DIR=/var/empty/${RUN_USER}
+ENV PATH=$PATH:${RUN_DIR}
+
+RUN mkdir -p ${RUN_DIR} \
+    && /usr/sbin/addgroup ${RUN_GROUP} \
+    && /usr/sbin/adduser --home ${RUN_DIR} --shell /usr/sbin/nologin \
+    --disabled-password --no-create-home  --ingroup ${RUN_GROUP} \
+    --gecos "User running the Java process" ${RUN_USER} \
+    && chown ${RUN_USER}:${RUN_GROUP} /var/log \
+    && printf "#!/bin/sh\nexec java \${JAVA_OPTIONS} -jar quarkus-run.jar \${@}\n" > ${RUN_DIR}/entrypoint.sh \
+    && chmod 755 ${RUN_DIR}/entrypoint.sh
+
+# Configure the JAVA_OPTIONS, you can add -XshowSettings:vm to also display the heap size.
+ENV JAVA_OPTIONS="-Dquarkus.http.host=0.0.0.0 -Dquarkus.http.port=8080 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
+
+# We make four distinct layers so if there are application changes the library layers can be re-used
+COPY --chown=${RUN_USER} target/quarkus-app/lib/ ${RUN_DIR}/lib/
+COPY --chown=${RUN_USER} target/quarkus-app/*.jar ${RUN_DIR}/
+COPY --chown=${RUN_USER} target/quarkus-app/app/ ${RUN_DIR}/app/
+COPY --chown=${RUN_USER} target/quarkus-app/quarkus/ ${RUN_DIR}/quarkus/
+
+WORKDIR ${RUN_DIR}
+USER ${RUN_USER}
+
+EXPOSE 8080
+
+ENTRYPOINT ["entrypoint.sh"]

@@ -71,6 +71,12 @@
             <artifactId>quarkus-config-yaml</artifactId>
         </dependency>
 
+        <!-- Quarkus: Docker -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-container-image-docker</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.jboss.slf4j</groupId>
             <artifactId>slf4j-jboss-logmanager</artifactId>

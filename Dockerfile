@@ -1,4 +1,5 @@
 FROM alpine:3.14
+RUN apk update && apk upgrade
 RUN apk --no-cache add openjdk11-jre-headless --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 
 ENV RUN_USER=java-runner
