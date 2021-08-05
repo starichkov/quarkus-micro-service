@@ -20,7 +20,7 @@ class RestControllerTest {
 
     @Test
     @DisplayName("Endpoint '/plain' test")
-    public void testPlainEndpoint() {
+    void testPlainEndpoint() {
         String response = when()
                 .get("/examples/quarkus/plain")
                 .then()
@@ -34,7 +34,7 @@ class RestControllerTest {
 
     @Test
     @DisplayName("Endpoint '/jedi' test, Jedi exists")
-    public void testJediEndpoint() {
+    void testJediEndpoint() {
         Jedi response = when()
                 .get("/examples/quarkus/jedi/{name}", "Obi-Wan")
                 .then()
@@ -49,7 +49,7 @@ class RestControllerTest {
 
     @Test
     @DisplayName("Endpoint '/jedi' test, no Jedi found")
-    public void testNoJediEndpoint() {
+    void testNoJediEndpoint() {
         when()
                 .get("/examples/quarkus/jedi/{name}", "Kirk")
                 .then()
