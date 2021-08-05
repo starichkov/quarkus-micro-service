@@ -1,3 +1,5 @@
+[![codecov](https://img.shields.io/codecov/c/github/starichkovva/quarkus-rest-example?style=for-the-badge)](https://codecov.io/gh/starichkovva/quarkus-rest-example)
+
 Quarkus micro-framework example project
 =
 This project is a working, ready-to-copy-and-use, Quarkus framework based micro-service.
