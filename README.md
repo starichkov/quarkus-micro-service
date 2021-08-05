@@ -1,19 +1,44 @@
 Quarkus micro-framework example project
 =
+This project is a working, ready-to-copy-and-use, Quarkus framework based micro-service.
 
-## Project
+## Available features
 
-This project already contains working REST service with JSON serialisation (using Jackson), and even more!
+### Quarkus own features (extension-based)
 
-### Quarkus' extensions -based additions
-
+- REST controller with multiple endpoints
+- JSON serialisation using Jackson
 - YAML-based configuration
 - Database with Flyway migration support
 - H2 database for test scope
+- [Health check](https://quarkus.io/guides/smallrye-health) endpoints
 
-### 3rd party libraries additions
+#### Health check
 
-- Lombok with Mapstruct (with Mapstruct's CDI mode)
+These endpoints are available via following URLs:
+
+```
+GET http://localhost:8080/q/health
+GET http://localhost:8080/q/health/live
+GET http://localhost:8080/q/health/ready
+```
+
+Also, there is Health UI provided too:
+
+```
+http://localhost:8080/q/health-ui/
+```
+
+### 3rd party libraries features
+
+- Lombok + Mapstruct (with Mapstruct's CDI mode)
+
+## Planned features
+
+Here is the list of features I am planning to add and use soon:
+
+- Redis client with health indicator
+- Scheduling tasks
 
 ## Docker support
 
@@ -56,11 +81,7 @@ mvn clean package -U \
 
 That's why there is also Dockerfile exists in the project root - it will expect uber jar to be copied to the container instead of multiple folders structure.
 
-## Next steps
-
-- Usage of Quarkus 'Docker extension' to generate Docker image for the app (instead of manually created one)
-
-## Official documentation errors found
+## Official documentation mistakes
 
 - Quarkus documentation says that minimum version of Maven supported is `3.6.1`. But on deal `add-extension` is not working even on Maven `3.6.3`. 
   In fact, it works fine only with Maven `3.8.1`.

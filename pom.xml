@@ -71,10 +71,14 @@
             <artifactId>quarkus-config-yaml</artifactId>
         </dependency>
 
-        <!-- Quarkus: Docker -->
+        <!-- Quarkus: Containerization -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-container-image-docker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-health</artifactId>
         </dependency>
 
         <dependency>
