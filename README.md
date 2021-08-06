@@ -4,7 +4,7 @@ Quarkus micro-framework example project
 =
 This project is a working, ready-to-copy-and-use, Quarkus framework based micro-service.
 
-## Available features
+## Features already implemented in this example
 
 ### Quarkus own features (extension-based)
 
@@ -14,6 +14,7 @@ This project is a working, ready-to-copy-and-use, Quarkus framework based micro-
 - Database with Flyway migration support
 - H2 database for test scope
 - [Health check](https://quarkus.io/guides/smallrye-health) endpoints
+- [Scheduled](https://quarkus.io/guides/scheduler-reference) tasks configured to use Unix [Crontab](https://crontab.guru/) syntax
 
 #### Health check
 
@@ -39,8 +40,7 @@ http://localhost:8080/q/health-ui/
 
 Here is the list of features I am planning to add and use soon:
 
-- Redis client with health indicator
-- Scheduling tasks
+- Redis client (with health indicator)
 
 ## Docker support
 

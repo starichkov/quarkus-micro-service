@@ -17,3 +17,11 @@ quarkus:
   hibernate-orm:
     database:
       default-schema: ${database.schema}
+  scheduler:
+    cron-type: unix
+
+scheduled:
+  job1:
+    cron: "*/2 * * * *"
+  job2:
+    cron: "off"

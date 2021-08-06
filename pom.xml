@@ -71,6 +71,12 @@
             <artifactId>quarkus-config-yaml</artifactId>
         </dependency>
 
+        <!-- Quarkus: Scheduling -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-scheduler</artifactId>
+        </dependency>
+
         <!-- Quarkus: Containerization -->
         <dependency>
             <groupId>io.quarkus</groupId>
