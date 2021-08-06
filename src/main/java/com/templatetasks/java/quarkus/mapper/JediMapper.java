@@ -1,8 +1,8 @@
-package org.starichkov.java.quarkus.mapper;
+package com.templatetasks.java.quarkus.mapper;
 
 import org.mapstruct.Mapper;
-import org.starichkov.java.quarkus.domain.JediEntity;
-import org.starichkov.java.quarkus.dto.Jedi;
+import com.templatetasks.java.quarkus.domain.JediEntity;
+import com.templatetasks.java.quarkus.dto.Jedi;
 
 /**
  * @author Vadim Starichkov (starichkovva@gmail.com)

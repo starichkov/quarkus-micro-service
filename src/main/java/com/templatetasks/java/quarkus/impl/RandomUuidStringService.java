@@ -1,6 +1,6 @@
-package org.starichkov.java.quarkus.impl;
+package com.templatetasks.java.quarkus.impl;
 
-import org.starichkov.java.quarkus.RandomStringService;
+import com.templatetasks.java.quarkus.RandomStringService;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.*;

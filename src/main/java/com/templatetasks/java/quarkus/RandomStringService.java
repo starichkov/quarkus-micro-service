@@ -1,4 +1,4 @@
-package org.starichkov.java.quarkus;
+package com.templatetasks.java.quarkus;
 
 /**
  * @author Vadim Starichkov (starichkovva@gmail.com)

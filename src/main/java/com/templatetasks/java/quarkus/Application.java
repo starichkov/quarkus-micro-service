@@ -1,4 +1,4 @@
-package org.starichkov.java.quarkus;
+package com.templatetasks.java.quarkus;
 
 import io.quarkus.runtime.Quarkus;
 import io.quarkus.runtime.annotations.QuarkusMain;

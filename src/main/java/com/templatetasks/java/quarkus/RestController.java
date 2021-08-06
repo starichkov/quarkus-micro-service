@@ -1,8 +1,8 @@
-package org.starichkov.java.quarkus;
+package com.templatetasks.java.quarkus;
 
+import com.templatetasks.java.quarkus.dto.Jedi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.starichkov.java.quarkus.dto.Jedi;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;

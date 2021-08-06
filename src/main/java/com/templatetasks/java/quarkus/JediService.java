@@ -1,6 +1,6 @@
-package org.starichkov.java.quarkus;
+package com.templatetasks.java.quarkus;
 
-import org.starichkov.java.quarkus.dto.Jedi;
+import com.templatetasks.java.quarkus.dto.Jedi;
 
 /**
  * @author Vadim Starichkov (starichkovva@gmail.com)

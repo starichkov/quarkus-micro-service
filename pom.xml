@@ -7,6 +7,24 @@
     <artifactId>quarkus-rest-example</artifactId>
     <version>1.0.0</version>
 
+    <name>Quarkus micro-service sample project</name>
+    <description>Quarkus sample micro-service service with multiple features available</description>
+
+    <developers>
+        <developer>
+            <name>Vadim Starichkov</name>
+            <email>starichkovva@gmail.com</email>
+            <url>https://www.templatetasks.com</url>
+            <organization>Template Tasks</organization>
+            <organizationUrl>https://www.templatetasks.com</organizationUrl>
+            <timezone>2</timezone>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
     <properties>
         <!-- Project -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

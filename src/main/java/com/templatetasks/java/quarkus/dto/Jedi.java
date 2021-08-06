@@ -1,4 +1,4 @@
-package org.starichkov.java.quarkus.dto;
+package com.templatetasks.java.quarkus.dto;
 
 import lombok.Value;
 

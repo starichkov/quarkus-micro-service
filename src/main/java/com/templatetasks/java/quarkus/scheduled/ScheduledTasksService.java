@@ -1,4 +1,4 @@
-package org.starichkov.java.quarkus.scheduled;
+package com.templatetasks.java.quarkus.scheduled;
 
 import io.quarkus.scheduler.Scheduled;
 import io.quarkus.scheduler.ScheduledExecution;

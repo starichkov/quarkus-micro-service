@@ -1,4 +1,4 @@
-package org.starichkov.java.quarkus.domain;
+package com.templatetasks.java.quarkus.domain;
 
 import lombok.Data;
 

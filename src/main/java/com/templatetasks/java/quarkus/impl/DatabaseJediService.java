@@ -1,9 +1,9 @@
-package org.starichkov.java.quarkus.impl;
+package com.templatetasks.java.quarkus.impl;
 
-import org.starichkov.java.quarkus.JediService;
-import org.starichkov.java.quarkus.domain.JediEntity;
-import org.starichkov.java.quarkus.dto.Jedi;
-import org.starichkov.java.quarkus.mapper.JediMapper;
+import com.templatetasks.java.quarkus.JediService;
+import com.templatetasks.java.quarkus.domain.JediEntity;
+import com.templatetasks.java.quarkus.dto.Jedi;
+import com.templatetasks.java.quarkus.mapper.JediMapper;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;

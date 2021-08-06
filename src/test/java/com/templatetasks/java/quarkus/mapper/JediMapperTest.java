@@ -1,10 +1,10 @@
-package org.starichkov.java.quarkus.mapper;
+package com.templatetasks.java.quarkus.mapper;
 
+import com.templatetasks.java.quarkus.domain.JediEntity;
+import com.templatetasks.java.quarkus.dto.Jedi;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
-import org.starichkov.java.quarkus.domain.JediEntity;
-import org.starichkov.java.quarkus.dto.Jedi;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
