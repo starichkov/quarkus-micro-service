@@ -85,11 +85,6 @@ mvn clean package -U \
 
 That's why there is also Dockerfile exists in the project root - it will expect uber jar to be copied to the container instead of multiple folders structure.
 
-## Official documentation mistakes
-
-- Quarkus documentation says that minimum version of Maven supported is `3.6.1`. But on deal `add-extension` is not working even on Maven `3.6.3`. 
-  In fact, it works fine only with Maven `3.8.1`.
-
 ## License
 
 See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
