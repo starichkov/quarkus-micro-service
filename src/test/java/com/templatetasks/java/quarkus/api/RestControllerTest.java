@@ -1,4 +1,4 @@
-package com.templatetasks.java.quarkus;
+package com.templatetasks.java.quarkus.api;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.DisplayName;
@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * @since 02.08.2021 18:25
  */
 @QuarkusTest
+@DisplayName("RestController endpoints tests")
 class RestControllerTest {
 
     @Test

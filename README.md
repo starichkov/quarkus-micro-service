@@ -16,6 +16,7 @@ This project is a working, ready-to-copy-and-use, Quarkus framework based micro-
 - H2 database for test scope
 - [Health check](https://quarkus.io/guides/smallrye-health) endpoints
 - [Scheduled](https://quarkus.io/guides/scheduler-reference) tasks configured to use Unix [Crontab](https://crontab.guru/) syntax
+- [Redis client](https://quarkus.io/guides/redis) (with health indicator)
 
 #### Health check
 
@@ -39,9 +40,9 @@ http://localhost:8080/q/health-ui/
 
 ## Planned features
 
-Here is the list of features I am planning to add and use soon:
+List of features I am planning to add soon:
 
-- Redis client (with health indicator)
+- Caching with Redis as a provider
 
 ## Docker support
 

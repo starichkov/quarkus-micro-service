@@ -3,6 +3,10 @@ database:
   host: localhost
   port: 3306
 
+redis:
+  host: localhost
+  port: 6379
+
 quarkus:
   datasource:
     username: ${database.username}
@@ -17,6 +21,8 @@ quarkus:
   hibernate-orm:
     database:
       default-schema: ${database.schema}
+  redis:
+    hosts: redis://${redis.host}:${redis.port}
   scheduler:
     cron-type: unix
 

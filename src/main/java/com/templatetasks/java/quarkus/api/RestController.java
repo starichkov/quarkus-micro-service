@@ -1,8 +1,9 @@
-package com.templatetasks.java.quarkus;
+package com.templatetasks.java.quarkus.api;
 
+import com.templatetasks.java.quarkus.JediService;
+import com.templatetasks.java.quarkus.RandomStringService;
 import com.templatetasks.java.quarkus.dto.Jedi;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -17,9 +18,8 @@ import javax.ws.rs.core.Response;
  * @since 02.08.2021 18:07
  */
 @Path("/examples/quarkus")
+@Slf4j
 public class RestController {
-
-    private static final Logger logger = LoggerFactory.getLogger(RestController.class);
 
     @Inject
     JediService jediService;

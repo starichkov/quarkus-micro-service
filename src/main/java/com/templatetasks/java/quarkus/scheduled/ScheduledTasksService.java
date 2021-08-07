@@ -16,12 +16,12 @@ public class ScheduledTasksService {
 
     @Scheduled(every = "45s", delayed = "15s")
     void every60s() {
-        log.info("Cron job 'Every 45 seconds' executed!");
+        logger.info("Cron job 'Every 45 seconds' executed!");
     }
 
     @Scheduled(cron = "{scheduled.job1.cron}")
     void cronJobWithExpressionInConfig(ScheduledExecution execution) {
-        log.info("Cron job 'Expression configured in application.yaml' executed at {}!", execution.getScheduledFireTime());
+        logger.info("Cron job 'Expression configured in application.yaml' executed at {}!", execution.getScheduledFireTime());
     }
 
     @Scheduled(cron = "{scheduled.job2.cron}")
