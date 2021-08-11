@@ -1,5 +1,5 @@
-![GitHub](https://img.shields.io/github/license/starichkovva/quarkus-rest-example?label=LICENSE&style=for-the-badge)
-[![codecov](https://img.shields.io/codecov/c/github/starichkovva/quarkus-rest-example?style=for-the-badge)](https://codecov.io/gh/starichkovva/quarkus-rest-example)
+![GitHub](https://img.shields.io/github/license/starichkovva/quarkus-micro-service?label=LICENSE&style=for-the-badge)
+[![codecov](https://img.shields.io/codecov/c/github/starichkovva/quarkus-micro-service?style=for-the-badge)](https://codecov.io/gh/starichkovva/quarkus-micro-service)
 
 Quarkus micro-framework example project
 =
@@ -70,7 +70,7 @@ To build such standard app and Docker image for it, use following command:
 mvn clean package -U \
   -Dquarkus.package.type=jar \
   -Dquarkus.container-image.build=true \
-  -Dquarkus.container-image.name=quarkus-rest-example \
+  -Dquarkus.container-image.name=quarkus-micro-service \
   -Dquarkus.container-image.tag=1.0.0
 ```
 
