@@ -1,13 +1,13 @@
-![GitHub](https://img.shields.io/github/license/starichkovva/quarkus-micro-service?label=LICENSE&style=for-the-badge)
 [![codecov](https://img.shields.io/codecov/c/github/starichkovva/quarkus-micro-service?style=for-the-badge)](https://codecov.io/gh/starichkovva/quarkus-micro-service)
+![GitHub](https://img.shields.io/github/license/starichkovva/quarkus-micro-service?label=LICENSE&style=for-the-badge)
 
-Quarkus micro-framework example project
+Quarkus micro-service
 =
-This project is a working, ready-to-copy-and-use, Quarkus framework based micro-service.
+This project is a ready-to-copy-and-use, Quarkus framework based micro-service.
 
-## Features already implemented in this example
+## What's inside?
 
-### Quarkus own features (extension-based)
+### Quarkus extensions based features
 
 - REST controller with multiple endpoints
 - JSON serialisation using Jackson
@@ -34,56 +34,34 @@ Also, there is Health UI provided too:
 http://localhost:8080/q/health-ui/
 ```
 
+### Docker
+
+This service contains two Dockerfile-s, [more details](/documentation/DOCKER.md) on the separate page.
+
 ### 3rd party libraries features
 
 - Lombok + Mapstruct (with Mapstruct's CDI mode)
 
-## Planned features
+## What's the plan?
 
-List of features I am planning to add soon:
+List of features I am planning to add:
 
-- Caching with Redis as a provider
+- OpenTracing support
+- Hibernate ORM with Panache (more on the [official guide](https://quarkus.io/guides/hibernate-orm-panache))
+- Qute templating engine (special-for-Quarkus alternative to Freemarker or Mustache engines)
+- EventBus (alternative to Spring's ApplicationEvent system)
+- WebSocket support
+- AMPQ support
+- Native Build with GraalVM
 
-## Docker support
+## Limitations found
 
-There are 2 ways to build Quarkus app, both leads to different Docker images to be build too.
+Quarkus does not support/provide:
 
-### Quarkus standard Jar
+- Redis as a persistence layer for caching extension. It means you can't use Quarkus `@Cache**` annotations with underlying Redis.
+  And Quarkus itself will not allow to implement such layer easily - caching extension does not accept custom `CacheManager` or cache types.
 
-This is a default Quarkus mode - it will create following structure in the `target/` folder (in addition to Maven's build):
-
-```
-target/quarkus/
-target/quarkus-app/
-target/quarkus-app/app/
-target/quarkus-app/lib/
-target/quarkus-app/quarkus/
-```
-
-In `target/quarkus-app` there will be `quarkus-runner.jar` for launching your app which is placed under `target/quarkus-app/app/`.
-
-Quarkus 'Docker extension' awaits `Dockerfile.jvm` to be under `src/main/docker`.
-
-To build such standard app and Docker image for it, use following command:
-
-```shell
-mvn clean package -U \
-  -Dquarkus.package.type=jar \
-  -Dquarkus.container-image.build=true \
-  -Dquarkus.container-image.name=quarkus-micro-service \
-  -Dquarkus.container-image.tag=1.0.0
-```
-
-### 2. Quarkus uber Jar
-
-This is default mode for this specific project. Standard `mvn clean package` in this project is equivalent to:
-
-```shell
-mvn clean package -U \
-  -Dquarkus.package.type=uber-jar
-```
-
-That's why there is also Dockerfile exists in the project root - it will expect uber jar to be copied to the container instead of multiple folders structure.
+- AOP (AspectJ) as Spring does. Partially similar behavior could be achieved via Interceptors, but it is still quite a different thing...
 
 ## License
 
