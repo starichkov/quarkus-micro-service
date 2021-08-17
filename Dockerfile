@@ -1,6 +1,10 @@
-FROM alpine:3.14
-RUN apk update && apk upgrade
+FROM alpine:3.14 AS alpine-jre-11
 RUN apk --no-cache add openjdk11-jre-headless --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
+
+FROM alpine-jre-11 AS alpine-jre-11-fresh
+RUN apk update && apk upgrade
+
+FROM alpine-jre-11-fresh
 
 ENV RUN_USER=java-runner
 ENV RUN_GROUP=${RUN_USER}
