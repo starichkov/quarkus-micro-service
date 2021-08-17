@@ -11,6 +11,8 @@ quarkus:
   hibernate-orm:
     log:
       sql: true
+  jaeger:
+    enabled: false
   log:
     category:
       "com.mysql.cj.jdbc":
