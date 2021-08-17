@@ -3,20 +3,29 @@
 
 Quarkus micro-service
 =
-This project is a ready-to-copy-and-use, Quarkus framework based micro-service.
+This project is a Quarkus framework based, ready to 'fork-and-use' micro-service.
 
 ## What's inside?
 
 ### Quarkus extensions based features
 
-- REST controller with multiple endpoints
+- REST controller with multiple endpoints ([official guide](https://quarkus.io/guides/rest-json))
 - JSON serialisation using Jackson
-- YAML-based configuration
-- Database with Flyway migration support
+- YAML-based configuration ([official guide](https://quarkus.io/guides/config-yaml))
+- Database with Flyway migration support ([official guide](https://quarkus.io/guides/flyway))
 - H2 database for test scope
-- [Health check](https://quarkus.io/guides/smallrye-health) endpoints
-- [Scheduled](https://quarkus.io/guides/scheduler-reference) tasks configured to use Unix [Crontab](https://crontab.guru/) syntax
-- [Redis client](https://quarkus.io/guides/redis) (with health indicator)
+- Health check endpoints ([official guide](https://quarkus.io/guides/smallrye-health))
+- Scheduled tasks configured to use Unix [Crontab](https://crontab.guru/) syntax ([official guide](https://quarkus.io/guides/scheduler-reference))
+- Redis client with health indicator ([official guide](https://quarkus.io/guides/redis))
+- OpenTracing support ([official guide](https://quarkus.io/guides/opentracing))
+
+This service contains multiple features which requires additional services to be available:
+
+| Feature | Requirement | How to run in Docker |
+|---|---|---|
+| Database | MySQL server | [mysql.md](/documentation/mysql.md) |
+| Redis | Redis server | [redis.md](/documentation/redis.md) |
+| Opentracing | Jaeger server | [jaeger.md](/documentation/jaeger.md) |
 
 #### Health check
 
@@ -46,8 +55,7 @@ This service contains two Dockerfile-s, [more details](/documentation/DOCKER.md)
 
 List of features I am planning to add:
 
-- OpenTracing support
-- Hibernate ORM with Panache (more on the [official guide](https://quarkus.io/guides/hibernate-orm-panache))
+- Hibernate ORM with Panache ([official guide](https://quarkus.io/guides/hibernate-orm-panache))
 - Qute templating engine (special-for-Quarkus alternative to Freemarker or Mustache engines)
 - EventBus (alternative to Spring's ApplicationEvent system)
 - WebSocket support

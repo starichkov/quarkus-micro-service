@@ -4,6 +4,7 @@ import com.templatetasks.java.quarkus.JediService;
 import com.templatetasks.java.quarkus.domain.JediEntity;
 import com.templatetasks.java.quarkus.dto.Jedi;
 import com.templatetasks.java.quarkus.mapper.JediMapper;
+import org.eclipse.microprofile.opentracing.Traced;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;
@@ -17,6 +18,7 @@ import java.util.stream.*;
  */
 @ApplicationScoped
 @Default
+@Traced
 public class DatabaseJediService implements JediService {
 
     @Inject

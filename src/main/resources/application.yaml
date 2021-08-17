@@ -3,6 +3,10 @@ database:
   host: localhost
   port: 3306
 
+jaeger:
+  host: localhost
+  port: 14268
+
 redis:
   host: localhost
   port: 6379
@@ -21,6 +25,15 @@ quarkus:
   hibernate-orm:
     database:
       default-schema: ${database.schema}
+  jaeger:
+    sampler-type: const
+    sampler-param: 1
+    # these 2 lines needed to push data to backend, comment to use no-op instead
+    service-name: quarkus-micro-service
+    endpoint: http://${jaeger.host}:${jaeger.port}/api/traces
+  log:
+    console:
+      format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p traceId=%X{traceId}, parentId=%X{parentId}, spanId=%X{spanId}, sampled=%X{sampled} [%c{3.}] (%t) %s%e%n"
   redis:
     hosts: redis://${redis.host}:${redis.port}
   scheduler:
