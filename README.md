@@ -3,7 +3,7 @@
 
 Quarkus micro-service
 =
-This project is a Quarkus framework based, ready to 'fork-and-use' micro-service.
+This project is a Quarkus framework based, 'ready-to-play' micro-service.
 
 ## What's inside?
 
@@ -18,6 +18,7 @@ This project is a Quarkus framework based, ready to 'fork-and-use' micro-service
 - Scheduled tasks configured to use Unix [Crontab](https://crontab.guru/) syntax ([official guide](https://quarkus.io/guides/scheduler-reference))
 - Redis client with health indicator ([official guide](https://quarkus.io/guides/redis))
 - OpenTracing support ([official guide](https://quarkus.io/guides/opentracing))
+- EventBus (alternative to Spring's ApplicationEvent system, [official guide](https://quarkus.io/guides/reactive-event-bus))
 
 This service contains multiple features which requires additional services to be available:
 
@@ -55,9 +56,9 @@ This service contains two Dockerfile-s, [more details](/documentation/DOCKER.md)
 
 List of features I am planning to add:
 
+- Migrate to multi-module Maven project
 - Hibernate ORM with Panache ([official guide](https://quarkus.io/guides/hibernate-orm-panache))
 - Qute templating engine (special-for-Quarkus alternative to Freemarker or Mustache engines)
-- EventBus (alternative to Spring's ApplicationEvent system)
 - WebSocket support
 - AMPQ support
 - Native Build with GraalVM

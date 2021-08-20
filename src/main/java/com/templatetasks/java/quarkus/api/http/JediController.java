@@ -2,6 +2,7 @@ package com.templatetasks.java.quarkus.api.http;
 
 import com.templatetasks.java.quarkus.Constants;
 import com.templatetasks.java.quarkus.dto.Jedi;
+import com.templatetasks.java.quarkus.service.EventService;
 import com.templatetasks.java.quarkus.service.JediService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,6 +21,9 @@ public class JediController {
 
     @Inject
     JediService jediService;
+
+    @Inject
+    EventService eventService;
 
     @GET
     @Path("/{name}")
@@ -48,6 +52,7 @@ public class JediController {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                            .build();
         } else {
+            eventService.send(jedi);
             return Response.ok(jedi)
                            .build();
         }

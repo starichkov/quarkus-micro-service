@@ -10,4 +10,6 @@ public interface Constants {
 
     String JEDI_ENDPOINT = BASE_ENDPOINT + "/jedi";
     String REDIS_ENDPOINT = BASE_ENDPOINT + "/redis";
+
+    String EVENT_ADDRESS_NEW_JEDI = "jedi_order";
 }
