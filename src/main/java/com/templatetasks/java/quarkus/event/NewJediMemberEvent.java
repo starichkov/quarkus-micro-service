@@ -1,4 +1,4 @@
-package com.templatetasks.java.quarkus.events;
+package com.templatetasks.java.quarkus.event;
 
 import com.templatetasks.java.quarkus.dto.Jedi;
 import lombok.Value;

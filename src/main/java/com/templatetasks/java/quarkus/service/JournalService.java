@@ -1,6 +1,6 @@
 package com.templatetasks.java.quarkus.service;
 
-import com.templatetasks.java.quarkus.events.NewJediMemberEvent;
+import com.templatetasks.java.quarkus.event.NewJediMemberEvent;
 
 /**
  * Service for receiving events from {@link io.vertx.core.eventbus.EventBus}

@@ -2,7 +2,7 @@ package com.templatetasks.java.quarkus.service.impl;
 
 import com.templatetasks.java.quarkus.Constants;
 import com.templatetasks.java.quarkus.dto.Jedi;
-import com.templatetasks.java.quarkus.events.NewJediMemberEvent;
+import com.templatetasks.java.quarkus.event.NewJediMemberEvent;
 import com.templatetasks.java.quarkus.service.EventService;
 import io.vertx.core.eventbus.EventBus;
 

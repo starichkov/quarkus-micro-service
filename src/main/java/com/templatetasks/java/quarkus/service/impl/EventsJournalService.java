@@ -1,7 +1,7 @@
 package com.templatetasks.java.quarkus.service.impl;
 
 import com.templatetasks.java.quarkus.Constants;
-import com.templatetasks.java.quarkus.events.NewJediMemberEvent;
+import com.templatetasks.java.quarkus.event.NewJediMemberEvent;
 import com.templatetasks.java.quarkus.service.JournalService;
 import io.quarkus.vertx.ConsumeEvent;
 import lombok.extern.slf4j.Slf4j;
