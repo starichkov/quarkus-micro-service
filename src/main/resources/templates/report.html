@@ -1,0 +1,16 @@
+{! This is how you can grant type safety for the template !}
+{@com.templatetasks.java.quarkus.dto.Jedi jedi}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jedi Order new member report</title>
+</head>
+<body>
+<h2>Welcome our new Jedi Order member!</h2>
+<p>
+    {! You can refer object's properties like that: !}
+    New member: {jedi.name}, {jedi.title}
+</p>
+</body>
+</html>

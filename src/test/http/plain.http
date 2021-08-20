@@ -1,1 +1,5 @@
 GET http://localhost:8080/examples/quarkus/plain
+
+###
+
+GET http://localhost:8080/examples/quarkus/template?text=May the Force be with you!

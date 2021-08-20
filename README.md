@@ -19,6 +19,7 @@ This project is a Quarkus framework based, 'ready-to-play' micro-service.
 - Redis client with health indicator ([official guide](https://quarkus.io/guides/redis))
 - OpenTracing support ([official guide](https://quarkus.io/guides/opentracing))
 - EventBus (alternative to Spring's ApplicationEvent system, [official guide](https://quarkus.io/guides/reactive-event-bus))
+- Qute templating engine (special-for-Quarkus alternative to Freemarker or Mustache engines, [official guide](https://quarkus.io/guides/qute-reference))
 
 This service contains multiple features which requires additional services to be available:
 
@@ -56,11 +57,11 @@ This service contains two Dockerfile-s, [more details](/documentation/DOCKER.md)
 
 List of features I am planning to add:
 
-- Migrate to multi-module Maven project
+- Async controller endpoints
 - Hibernate ORM with Panache ([official guide](https://quarkus.io/guides/hibernate-orm-panache))
-- Qute templating engine (special-for-Quarkus alternative to Freemarker or Mustache engines)
 - WebSocket support
 - AMPQ support
+- Migrate to multi-module Maven project
 - Native Build with GraalVM
 
 ## Limitations found
