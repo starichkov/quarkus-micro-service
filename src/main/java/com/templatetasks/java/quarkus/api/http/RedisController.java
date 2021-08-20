@@ -1,5 +1,6 @@
-package com.templatetasks.java.quarkus.api;
+package com.templatetasks.java.quarkus.api.http;
 
+import com.templatetasks.java.quarkus.Constants;
 import com.templatetasks.java.quarkus.cache.redis.RedisService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,7 +13,7 @@ import javax.ws.rs.core.Response;
  * @author Vadim Starichkov (starichkovva@gmail.com)
  * @since 07.08.2021 15:34
  */
-@Path("/examples/quarkus/redis")
+@Path(Constants.REDIS_ENDPOINT)
 @Slf4j
 public class RedisController {
 

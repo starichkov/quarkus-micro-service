@@ -1,0 +1,9 @@
+GET http://localhost:8080/q/health/live
+
+###
+
+GET http://localhost:8080/q/health/ready
+
+###
+
+GET http://localhost:8080/q/health

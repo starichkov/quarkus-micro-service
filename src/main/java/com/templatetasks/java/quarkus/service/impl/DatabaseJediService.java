@@ -1,15 +1,16 @@
-package com.templatetasks.java.quarkus.impl;
+package com.templatetasks.java.quarkus.service.impl;
 
-import com.templatetasks.java.quarkus.JediService;
 import com.templatetasks.java.quarkus.domain.JediEntity;
 import com.templatetasks.java.quarkus.dto.Jedi;
 import com.templatetasks.java.quarkus.mapper.JediMapper;
+import com.templatetasks.java.quarkus.service.JediService;
 import org.eclipse.microprofile.opentracing.Traced;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.stream.*;
 
 /**
@@ -27,6 +28,14 @@ public class DatabaseJediService implements JediService {
     @Inject
     JediMapper mapper;
 
+    @Transactional
+    @Override
+    public Jedi addJedi(String name, String title) {
+        JediEntity jediEntity = new JediEntity(name, title);
+        jediEntity = em.merge(jediEntity);
+        return mapper.map(jediEntity);
+    }
+
     @Override
     public Jedi getJedi(String name) {
         TypedQuery<JediEntity> query = em.createQuery("select j from JediEntity j where j.name like :name", JediEntity.class);
@@ -37,5 +46,13 @@ public class DatabaseJediService implements JediService {
                                    .orElse(null);
 
         return mapper.map(result);
+    }
+
+    @Transactional
+    @Override
+    public int removeJedi(String name) {
+        return em.createQuery("delete from JediEntity j where j.name = :name")
+                 .setParameter("name", name)
+                 .executeUpdate();
     }
 }

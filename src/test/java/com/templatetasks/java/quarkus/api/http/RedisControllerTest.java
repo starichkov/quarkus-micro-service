@@ -1,5 +1,6 @@
-package com.templatetasks.java.quarkus.api;
+package com.templatetasks.java.quarkus.api.http;
 
+import com.templatetasks.java.quarkus.Constants;
 import com.templatetasks.java.quarkus.cache.redis.RedisService;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.junit.mockito.InjectMock;
@@ -27,7 +28,7 @@ class RedisControllerTest {
     @DisplayName("Endpoint 'GET /redis/{key}' test with no item found")
     void getNoSuchKey() {
         when()
-                .get("/examples/quarkus/redis/{key}", "some_random_key")
+                .get(Constants.REDIS_ENDPOINT + "/{key}", "some_random_key")
                 .then()
                 .statusCode(204);
 
@@ -41,7 +42,7 @@ class RedisControllerTest {
                .thenReturn("2");
 
         when()
-                .get("/examples/quarkus/redis/{key}", "a")
+                .get(Constants.REDIS_ENDPOINT + "/{key}", "a")
                 .then()
                 .statusCode(200)
                 .assertThat()
@@ -57,7 +58,7 @@ class RedisControllerTest {
                .thenReturn("3");
 
         when()
-                .patch("/examples/quarkus/redis/{key}", "b")
+                .patch(Constants.REDIS_ENDPOINT + "/{key}", "b")
                 .then()
                 .statusCode(200)
                 .assertThat()
@@ -70,7 +71,7 @@ class RedisControllerTest {
     @DisplayName("Endpoint 'POST /redis/{key}/{value}' test")
     void set() {
         when()
-                .post("/examples/quarkus/redis/{key}/{value}", "c", "4")
+                .post(Constants.REDIS_ENDPOINT + "/{key}/{value}", "c", "4")
                 .then()
                 .statusCode(204);
 
@@ -81,7 +82,7 @@ class RedisControllerTest {
     @DisplayName("Endpoint 'DELETE /redis/{key}' test")
     void delete() {
         when()
-                .delete("/examples/quarkus/redis/{key}", "d")
+                .delete(Constants.REDIS_ENDPOINT + "/{key}", "d")
                 .then()
                 .statusCode(204);
 

@@ -1,4 +1,4 @@
-package com.templatetasks.java.quarkus;
+package com.templatetasks.java.quarkus.service;
 
 import com.templatetasks.java.quarkus.dto.Jedi;
 
@@ -8,5 +8,9 @@ import com.templatetasks.java.quarkus.dto.Jedi;
  */
 public interface JediService {
 
+    Jedi addJedi(String name, String title);
+
     Jedi getJedi(String name);
+
+    int removeJedi(String name);
 }

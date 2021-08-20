@@ -14,6 +14,7 @@ import javax.persistence.*;
 public class JediEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -22,4 +23,12 @@ public class JediEntity {
 
     @Column(name = "title")
     private String title;
+
+    public JediEntity() {
+    }
+
+    public JediEntity(String name, String title) {
+        this.name = name;
+        this.title = title;
+    }
 }
