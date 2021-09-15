@@ -3,6 +3,7 @@ package com.templatetasks.java.quarkus.service.impl;
 import com.templatetasks.java.quarkus.Constants;
 import com.templatetasks.java.quarkus.event.NewJediMemberEvent;
 import com.templatetasks.java.quarkus.service.JournalService;
+import io.micrometer.core.annotation.Counted;
 import io.quarkus.vertx.ConsumeEvent;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,6 +20,7 @@ public class EventsJournalService implements JournalService {
 
     private final AtomicInteger counter = new AtomicInteger();
 
+    @Counted("jedi.new.counted")
     @ConsumeEvent(Constants.EVENT_ADDRESS_NEW_JEDI)
     @Override
     public void handle(NewJediMemberEvent event) {

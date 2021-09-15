@@ -4,6 +4,7 @@ import com.templatetasks.java.quarkus.domain.JediEntity;
 import com.templatetasks.java.quarkus.dto.Jedi;
 import com.templatetasks.java.quarkus.mapper.JediMapper;
 import com.templatetasks.java.quarkus.service.JediService;
+import io.micrometer.core.annotation.Timed;
 import org.eclipse.microprofile.opentracing.Traced;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -28,6 +29,7 @@ public class DatabaseJediService implements JediService {
     @Inject
     JediMapper mapper;
 
+    @Timed("jedi.new.timed")
     @Transactional
     @Override
     public Jedi addJedi(String name, String title) {
@@ -36,6 +38,7 @@ public class DatabaseJediService implements JediService {
         return mapper.map(jediEntity);
     }
 
+    @Timed("jedi.get.timed")
     @Override
     public Jedi getJedi(String name) {
         TypedQuery<JediEntity> query = em.createQuery("select j from JediEntity j where j.name like :name", JediEntity.class);
@@ -48,6 +51,7 @@ public class DatabaseJediService implements JediService {
         return mapper.map(result);
     }
 
+    @Timed("jedi.delete.timed")
     @Transactional
     @Override
     public int removeJedi(String name) {

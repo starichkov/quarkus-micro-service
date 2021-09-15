@@ -110,10 +110,14 @@
             <artifactId>quarkus-redis-client</artifactId>
         </dependency>
 
-        <!-- Quarkus: Monitoring -->
+        <!-- Quarkus: Observability -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-smallrye-opentracing</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-micrometer-registry-prometheus</artifactId>
         </dependency>
 
         <!-- Quarkus: EventBus -->
