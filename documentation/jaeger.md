@@ -13,7 +13,7 @@ Below I will only re-post a part of their documentation.
 
 ```shell
 docker run -d --name jaeger \
-  --network=localnet
+  --network=localnet \
   -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
   -p 5775:5775/udp \
   -p 6831:6831/udp \
@@ -23,7 +23,7 @@ docker run -d --name jaeger \
   -p 14268:14268 \
   -p 14250:14250 \
   -p 9411:9411 \
-  jaegertracing/all-in-one:1.25
+  jaegertracing/all-in-one:1.29
 ```
 
 Jaeger UI will become accessible via `http://localhost:16686`.
