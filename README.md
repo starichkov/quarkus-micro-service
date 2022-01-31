@@ -5,6 +5,12 @@ Quarkus micro-service
 =
 This project is a Quarkus framework based, 'ready-to-play' micro-service.
 
+| Name    | Version     |
+|---------|-------------|
+| Java    | 11          |
+| Maven   | 3.8.1+      |
+| Quarkus | 2.6.3.Final |
+
 ## What's inside?
 
 ### Quarkus extensions based features
@@ -23,12 +29,12 @@ This project is a Quarkus framework based, 'ready-to-play' micro-service.
 
 This service contains multiple features which requires additional services to be available:
 
-| Feature | Requirement | How to run in Docker | How to disable |
-|---|---|---|---|
-| Database | MySQL server | [mysql.md](/documentation/mysql.md) | - required - |
-| Redis | Redis server | [redis.md](/documentation/redis.md) |  |
-| Opentracing | Jaeger server | [jaeger.md](/documentation/jaeger.md) | |
-| Metrics | Prometheus | [metrics.md](/documentation/prometheus.md) | `quarkus.micrometer.enabled=false` |
+| Feature     | Requirement   | How to run in Docker                       | How to disable                     |
+|-------------|---------------|--------------------------------------------|------------------------------------|
+| Database    | MySQL server  | [mysql.md](/documentation/mysql.md)        | - required -                       |
+| Redis       | Redis server  | [redis.md](/documentation/redis.md)        |                                    |
+| Opentracing | Jaeger server | [jaeger.md](/documentation/jaeger.md)      |                                    |
+| Metrics     | Prometheus    | [metrics.md](/documentation/prometheus.md) | `quarkus.micrometer.enabled=false` |
 
 #### Health check
 
