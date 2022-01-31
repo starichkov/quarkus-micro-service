@@ -68,10 +68,6 @@ class HealthCheckTest {
                 .body("checks", not(empty()))
                 .body("checks", not(emptyArray()))
                 .body("checks", hasSize(2))
-                .body("checks[0].name", equalTo("Database connections health check"))
-                .body("checks[0].status", equalTo("UP"))
-                .body("checks[1].name", equalTo("Redis connection health check"))
-                .body("checks[1].status", equalTo("UP"))
         ;
     }
 }
