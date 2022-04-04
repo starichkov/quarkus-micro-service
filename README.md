@@ -9,7 +9,7 @@ This project is a Quarkus framework based, 'ready-to-play' micro-service.
 |---------|-------------|
 | Java    | 17          |
 | Maven   | 3.8.1+      |
-| Quarkus | 2.6.3.Final |
+| Quarkus | 2.7.5.Final |
 
 ## What's inside?
 
@@ -27,7 +27,7 @@ This project is a Quarkus framework based, 'ready-to-play' micro-service.
 - EventBus (alternative to Spring's ApplicationEvent system, [official guide](https://quarkus.io/guides/reactive-event-bus))
 - Qute templating engine (special-for-Quarkus alternative to Freemarker or Mustache engines, [official guide](https://quarkus.io/guides/qute-reference))
 
-This service contains multiple features which requires additional services to be available:
+This service contains multiple features which requires some specific servers to be available and resolvable:
 
 | Feature     | Requirement   | How to run in Docker                       | How to disable                     |
 |-------------|---------------|--------------------------------------------|------------------------------------|
