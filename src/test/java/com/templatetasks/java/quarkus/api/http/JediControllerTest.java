@@ -31,8 +31,8 @@ class JediControllerTest {
                 .as(Jedi.class);
 
         assertNotNull(response);
-        assertEquals("Obi-Wan Kenobi", response.getName());
-        assertEquals("Jedi Master", response.getTitle());
+        assertEquals("Obi-Wan Kenobi", response.name());
+        assertEquals("Jedi Master", response.title());
     }
 
     @Test
@@ -57,8 +57,8 @@ class JediControllerTest {
                 .as(Jedi.class);
 
         assertNotNull(response);
-        assertEquals("Joda", response.getName());
-        assertEquals("Uber Jedi", response.getTitle());
+        assertEquals("Joda", response.name());
+        assertEquals("Uber Jedi", response.title());
     }
 
     @Test

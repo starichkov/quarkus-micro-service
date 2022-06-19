@@ -32,17 +32,17 @@
 
         <!-- Maven -->
         <maven.compiler.parameters>true</maven.compiler.parameters>
-        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
 
         <!-- Quarkus -->
         <quarkus.package.type>uber-jar</quarkus.package.type>
-        <quarkus.version>2.7.5.Final</quarkus.version>
+        <quarkus.version>2.9.2.Final</quarkus.version>
 
         <!-- 3-rd party libraries -->
-        <lombok.version>1.18.22</lombok.version>
+        <lombok.version>1.18.24</lombok.version>
         <lombok.mapstruct.binding.version>0.2.0</lombok.mapstruct.binding.version>
-        <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <mapstruct.version>1.5.2.Final</mapstruct.version>
     </properties>
 
     <dependencyManagement>
@@ -230,27 +230,6 @@
                         <maven.home>${maven.home}</maven.home>
                     </systemPropertyVariables>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.7</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                        <configuration>
-                            <exclClassLoaders>*QuarkusClassLoader</exclClassLoaders>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>generate-report</id>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>io.quarkus</groupId>

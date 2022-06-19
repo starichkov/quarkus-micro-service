@@ -29,8 +29,8 @@ class JediMapperTest {
     void mapEmpty() {
         Jedi jedi = mapper.map(new JediEntity());
         assertNotNull(jedi);
-        assertNull(jedi.getName());
-        assertNull(jedi.getTitle());
+        assertNull(jedi.name());
+        assertNull(jedi.title());
     }
 
     @DisplayName("Test map of valid entity should return valid dto")
@@ -43,7 +43,7 @@ class JediMapperTest {
         Jedi jedi = mapper.map(jediEntity);
         assertNotNull(jedi);
 
-        assertEquals(jediEntity.getName(), jedi.getName());
-        assertEquals(jediEntity.getTitle(), jedi.getTitle());
+        assertEquals(jediEntity.getName(), jedi.name());
+        assertEquals(jediEntity.getTitle(), jedi.title());
     }
 }

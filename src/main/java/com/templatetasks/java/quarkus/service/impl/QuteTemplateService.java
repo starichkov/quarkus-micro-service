@@ -24,7 +24,7 @@ public class QuteTemplateService implements TemplateService {
     @ConsumeEvent(Constants.EVENT_ADDRESS_NEW_JEDI)
     @Override
     public void report(NewJediMemberEvent event) {
-        String report = reportTemplate.data("jedi", event.getJedi())
+        String report = reportTemplate.data("jedi", event.jedi())
                                       .render();
         logger.info(report);
     }

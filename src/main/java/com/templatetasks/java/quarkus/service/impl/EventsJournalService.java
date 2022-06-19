@@ -24,6 +24,6 @@ public class EventsJournalService implements JournalService {
     @ConsumeEvent(Constants.EVENT_ADDRESS_NEW_JEDI)
     @Override
     public void handle(NewJediMemberEvent event) {
-        logger.info("JOURNAL RECORD #{}: Welcome our new Jedi Order member! {}", counter.incrementAndGet(), event.getJedi());
+        logger.info("JOURNAL RECORD #{}: Welcome our new Jedi Order member! {}", counter.incrementAndGet(), event.jedi());
     }
 }
