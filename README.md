@@ -1,15 +1,15 @@
 [![codecov](https://img.shields.io/codecov/c/github/starichkovva/quarkus-micro-service?style=for-the-badge)](https://codecov.io/gh/starichkovva/quarkus-micro-service)
 ![GitHub](https://img.shields.io/github/license/starichkovva/quarkus-micro-service?label=LICENSE&style=for-the-badge)
 
-Quarkus micro-service
+Quarkus microservice
 =
 This project is a Quarkus framework based, 'ready-to-play' micro-service.
 
-| Name    | Version     |
-|---------|-------------|
-| Java    | 17          |
-| Maven   | 3.8.1+      |
-| Quarkus | 2.9.2.Final |
+| Name    | Version      |
+|---------|--------------|
+| Java    | 17           |
+| Maven   | 3.8.1+       |
+| Quarkus | 2.10.4.Final |
 
 ## What's inside?
 
