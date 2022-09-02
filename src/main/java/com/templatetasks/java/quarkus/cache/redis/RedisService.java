@@ -1,11 +1,11 @@
 package com.templatetasks.java.quarkus.cache.redis;
 
-import io.quarkus.redis.client.RedisClient;
-import io.vertx.redis.client.Response;
+import io.quarkus.redis.datasource.RedisDataSource;
+import io.quarkus.redis.datasource.keys.KeyCommands;
+import io.quarkus.redis.datasource.string.StringCommands;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import java.util.*;
 
 /**
  * @author Vadim Starichkov (starichkovva@gmail.com)
@@ -14,28 +14,28 @@ import java.util.*;
 @ApplicationScoped
 public class RedisService {
 
-    private final RedisClient redisClient;
+    private final KeyCommands<String> keyCommands;
+    private final StringCommands<String, String> stringCommands;
 
     @Inject
-    public RedisService(RedisClient redisClient) {
-        this.redisClient = redisClient;
+    public RedisService(RedisDataSource ds) {
+        this.keyCommands = ds.key();
+        this.stringCommands = ds.string(String.class);
     }
 
     public String get(String key) {
-        Response response = redisClient.get(key);
-        return response == null ? null : response.toString();
+        return stringCommands.get(key);
     }
 
     public String increment(String key) {
-        return redisClient.incr(key)
-                          .toString();
+        return String.valueOf(stringCommands.incr(key));
     }
 
     public void delete(String key) {
-        redisClient.del(List.of(key));
+        keyCommands.del(key);
     }
 
     public void set(String key, int value) {
-        redisClient.set(List.of(key, String.valueOf(value)));
+        stringCommands.set(key, String.valueOf(value));
     }
 }

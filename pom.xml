@@ -37,7 +37,7 @@
 
         <!-- Quarkus -->
         <quarkus.package.type>uber-jar</quarkus.package.type>
-        <quarkus.version>2.10.4.Final</quarkus.version>
+        <quarkus.version>2.11.3.Final</quarkus.version>
 
         <!-- 3-rd party libraries -->
         <lombok.version>1.18.24</lombok.version>
@@ -192,6 +192,7 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
@@ -222,6 +223,7 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
