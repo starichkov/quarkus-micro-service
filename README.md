@@ -1,5 +1,5 @@
 [![codecov](https://img.shields.io/codecov/c/github/starichkovva/quarkus-micro-service?style=for-the-badge)](https://codecov.io/gh/starichkovva/quarkus-micro-service)
-![GitHub](https://img.shields.io/github/license/starichkovva/quarkus-micro-service?label=LICENSE&style=for-the-badge)
+[![GitHub license](https://img.shields.io/github/license/starichkovva/quarkus-micro-service?style=for-the-badge)](https://github.com/starichkovva/quarkus-micro-service/blob/master/LICENSE.md)
 
 Quarkus microservice
 =
