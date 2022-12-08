@@ -3,12 +3,26 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.example</groupId>
+    <groupId>com.templatetasks</groupId>
     <artifactId>quarkus-micro-service</artifactId>
     <version>1.0.0</version>
 
-    <name>Quarkus micro-service sample project</name>
+    <name>${project.groupId}:${project.artifactId}</name>
     <description>Quarkus sample micro-service service with multiple features available</description>
+    <url>https://github.com/starichkovva/quarkus-micro-service</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/starichkovva/quarkus-micro-service.git</connection>
+        <developerConnection>scm:git:ssh://github.com:starichkovva/quarkus-micro-service.git</developerConnection>
+        <url>https://github.com/starichkovva/quarkus-micro-service/tree/master</url>
+    </scm>
 
     <developers>
         <developer>
