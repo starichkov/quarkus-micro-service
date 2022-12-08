@@ -21,7 +21,7 @@
     <scm>
         <connection>scm:git:git://github.com/starichkovva/quarkus-micro-service.git</connection>
         <developerConnection>scm:git:ssh://github.com:starichkovva/quarkus-micro-service.git</developerConnection>
-        <url>https://github.com/starichkovva/quarkus-micro-service/tree/master</url>
+        <url>https://github.com/starichkovva/quarkus-micro-service</url>
     </scm>
 
     <developers>
