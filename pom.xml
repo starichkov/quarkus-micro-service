@@ -3,12 +3,12 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.templatetasks</groupId>
+    <groupId>com.templatetasks.java</groupId>
     <artifactId>quarkus-micro-service</artifactId>
     <version>1.0.0</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>Quarkus sample micro-service service with multiple features available</description>
+    <description>Quarkus sample microservice service with multiple features available</description>
     <url>https://github.com/starichkovva/quarkus-micro-service</url>
 
     <licenses>
