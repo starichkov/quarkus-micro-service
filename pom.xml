@@ -45,7 +45,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Maven -->
-        <maven.compiler.parameters>true</maven.compiler.parameters>
         <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
         <maven.enforcer.plugin.version>3.2.1</maven.enforcer.plugin.version>
         <maven.surefire.plugin.version>3.0.0</maven.surefire.plugin.version>
@@ -226,11 +225,6 @@
                             <version>${lombok.mapstruct.binding.version}</version>
                         </dependency>
                     </annotationProcessorPaths>
-                    <compilerArgs>
-                        <compilerArg>
-                            -Amapstruct.defaultComponentModel=cdi
-                        </compilerArg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
