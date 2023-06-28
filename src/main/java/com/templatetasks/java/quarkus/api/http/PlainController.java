@@ -4,11 +4,9 @@ import com.templatetasks.java.quarkus.Constants;
 import com.templatetasks.java.quarkus.service.RandomStringService;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 
 /**
  * @author Vadim Starichkov (starichkovva@gmail.com)

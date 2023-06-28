@@ -12,7 +12,7 @@ docker run -d --name mysql8 \
   --network=localnet \
   -e MYSQL_ROOT_PASSWORD=REPLACE_WITH_ROOT_PASSWORD \
   -p 3306:3306 \
-  mysql:8.0
+  mysql:8.0.33
 ```
 
 ### Prepare database and user

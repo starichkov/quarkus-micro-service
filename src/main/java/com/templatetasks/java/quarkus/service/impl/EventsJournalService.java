@@ -7,7 +7,7 @@ import io.micrometer.core.annotation.Counted;
 import io.quarkus.vertx.ConsumeEvent;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.concurrent.atomic.*;
 
 /**

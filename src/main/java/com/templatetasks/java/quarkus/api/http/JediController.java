@@ -6,10 +6,10 @@ import com.templatetasks.java.quarkus.service.EventService;
 import com.templatetasks.java.quarkus.service.JediService;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.inject.Inject;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 /**
  * @author Vadim Starichkov (starichkovva@gmail.com)

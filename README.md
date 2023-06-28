@@ -9,7 +9,7 @@ This project is a Quarkus framework based, 'ready-to-play' micro-service.
 |---------|--------------|
 | Java    | 17           |
 | Maven   | 3.8.1+       |
-| Quarkus | 2.16.7.Final |
+| Quarkus | 3.0.4.Final |
 
 ## What's inside?
 

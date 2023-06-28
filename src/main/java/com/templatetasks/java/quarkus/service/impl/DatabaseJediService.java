@@ -7,11 +7,11 @@ import com.templatetasks.java.quarkus.service.JediService;
 import io.micrometer.core.annotation.Timed;
 import org.eclipse.microprofile.opentracing.Traced;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Default;
-import javax.inject.Inject;
-import javax.persistence.*;
-import javax.transaction.Transactional;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Default;
+import jakarta.inject.Inject;
+import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 import java.util.stream.*;
 
 /**

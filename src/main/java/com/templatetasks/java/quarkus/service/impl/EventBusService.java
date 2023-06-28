@@ -6,8 +6,8 @@ import com.templatetasks.java.quarkus.event.NewJediMemberEvent;
 import com.templatetasks.java.quarkus.service.EventService;
 import io.vertx.core.eventbus.EventBus;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 /**
  * @author Vadim Starichkov (starichkovva@gmail.com)

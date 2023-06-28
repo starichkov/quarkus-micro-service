@@ -2,7 +2,7 @@ package com.templatetasks.java.quarkus.service.impl;
 
 import com.templatetasks.java.quarkus.service.RandomStringService;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.*;
 
 /**

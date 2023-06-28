@@ -6,11 +6,8 @@ import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 
 /**
  * @author Vadim Starichkov (starichkovva@gmail.com)

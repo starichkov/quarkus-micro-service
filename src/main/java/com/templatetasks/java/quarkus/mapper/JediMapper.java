@@ -9,7 +9,7 @@ import org.mapstruct.MappingConstants;
  * @author Vadim Starichkov (starichkovva@gmail.com)
  * @since 03.08.2021 14:27
  */
-@Mapper(componentModel = MappingConstants.ComponentModel.CDI)
+@Mapper(componentModel = MappingConstants.ComponentModel.JAKARTA_CDI)
 public interface JediMapper {
 
     Jedi map(JediEntity jediEntity);

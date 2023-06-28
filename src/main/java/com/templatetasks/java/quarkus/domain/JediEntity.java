@@ -2,7 +2,7 @@ package com.templatetasks.java.quarkus.domain;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * @author Vadim Starichkov (starichkovva@gmail.com)
