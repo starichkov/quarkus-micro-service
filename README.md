@@ -1,19 +1,20 @@
-[![codecov](https://img.shields.io/codecov/c/github/starichkovva/quarkus-micro-service?style=for-the-badge)](https://codecov.io/gh/starichkovva/quarkus-micro-service)
-[![GitHub license](https://img.shields.io/github/license/starichkovva/quarkus-micro-service?style=for-the-badge)](https://github.com/starichkovva/quarkus-micro-service/blob/main/LICENSE.md)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/starichkov/quarkus-micro-service/maven.yml?style=for-the-badge)](https://github.com/starichkov/quarkus-micro-service/actions/workflows/maven.yml)
+[![codecov](https://img.shields.io/codecov/c/github/starichkov/quarkus-micro-service?style=for-the-badge)](https://codecov.io/gh/starichkov/quarkus-micro-service)
+[![GitHub license](https://img.shields.io/github/license/starichkov/quarkus-micro-service?style=for-the-badge)](https://github.com/starichkov/quarkus-micro-service/blob/main/LICENSE.md)
 
 Quarkus microservice
 =
 This project is a Quarkus framework based, 'ready-to-play' micro-service.
 
-| Name    | Version      |
-|---------|--------------|
-| Java    | 17           |
-| Maven   | 3.8.1+       |
+| Name    | Version     |
+|---------|-------------|
+| Java    | 17          |
+| Maven   | 3.8.1+      |
 | Quarkus | 3.1.3.Final |
 
 ## What's inside?
 
-### Quarkus extensions based features
+### Quarkus extensions-based features
 
 - REST controller with multiple endpoints ([official guide](https://quarkus.io/guides/rest-json))
 - JSON serialisation using Jackson
