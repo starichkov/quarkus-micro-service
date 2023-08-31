@@ -11,7 +11,7 @@ Redis official images could be found [here](https://hub.docker.com/_/redis).
 docker run -d --name redis6 \
   --network=localnet \
   -p 6379:6379 \
-  redis:6.2.12-alpine
+  redis:6.2.13-alpine
 ```
 
 ### Network
