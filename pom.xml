@@ -51,7 +51,7 @@
 
         <!-- Quarkus -->
         <quarkus.package.type>uber-jar</quarkus.package.type>
-        <quarkus.version>3.4.2</quarkus.version>
+        <quarkus.version>3.4.3</quarkus.version>
 
         <!-- 3-rd party libraries -->
         <lombok.version>1.18.28</lombok.version>
