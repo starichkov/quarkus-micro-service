@@ -46,8 +46,8 @@
 
         <!-- Maven -->
         <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
-        <maven.enforcer.plugin.version>3.4.0</maven.enforcer.plugin.version>
-        <maven.surefire.plugin.version>3.1.2</maven.surefire.plugin.version>
+        <maven.enforcer.plugin.version>3.4.1</maven.enforcer.plugin.version>
+        <maven.surefire.plugin.version>3.2.1</maven.surefire.plugin.version>
 
         <!-- Quarkus -->
         <quarkus.package.type>uber-jar</quarkus.package.type>
@@ -206,8 +206,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <release>${java.version}</release>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.mapstruct</groupId>
