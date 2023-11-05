@@ -2,7 +2,7 @@ package com.templatetasks.java.quarkus.cache.redis;
 
 import io.quarkus.redis.datasource.RedisDataSource;
 import io.quarkus.redis.datasource.keys.KeyCommands;
-import io.quarkus.redis.datasource.string.StringCommands;
+import io.quarkus.redis.datasource.value.ValueCommands;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -15,20 +15,20 @@ import jakarta.inject.Inject;
 public class RedisService {
 
     private final KeyCommands<String> keyCommands;
-    private final StringCommands<String, String> stringCommands;
+    private final ValueCommands<String, String> valueCommands;
 
     @Inject
     public RedisService(RedisDataSource ds) {
         this.keyCommands = ds.key();
-        this.stringCommands = ds.string(String.class);
+        this.valueCommands = ds.value(String.class);
     }
 
     public String get(String key) {
-        return stringCommands.get(key);
+        return valueCommands.get(key);
     }
 
     public String increment(String key) {
-        return String.valueOf(stringCommands.incr(key));
+        return String.valueOf(valueCommands.incr(key));
     }
 
     public void delete(String key) {
@@ -36,6 +36,6 @@ public class RedisService {
     }
 
     public void set(String key, int value) {
-        stringCommands.set(key, String.valueOf(value));
+        valueCommands.set(key, String.valueOf(value));
     }
 }

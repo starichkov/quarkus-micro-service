@@ -2,15 +2,12 @@ package com.templatetasks.java.quarkus.cache.redis;
 
 import io.quarkus.redis.datasource.RedisDataSource;
 import io.quarkus.redis.datasource.keys.KeyCommands;
-import io.quarkus.redis.datasource.string.StringCommands;
+import io.quarkus.redis.datasource.value.ValueCommands;
+import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
-import io.quarkus.test.junit.mockito.InjectMock;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import jakarta.inject.Inject;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -27,41 +24,40 @@ import static org.mockito.Mockito.when;
 @DisplayName("RedisService methods tests")
 class RedisServiceTest {
 
-    @InjectMock
-    static RedisDataSource ds;
-
-    @Inject
     RedisService redisService;
 
-    static KeyCommands<String> keyCommands;
-    static StringCommands<String, String> stringCommands;
+    @InjectMock
+    private RedisDataSource ds;
 
-    @BeforeAll
-    static void beforeAll() {
-        keyCommands = mock(KeyCommands.class);
-        stringCommands = mock(StringCommands.class);
-    }
+    private KeyCommands<String> keyCommands;
+
+    private ValueCommands<String, String> valueCommands;
 
     @BeforeEach
     void setUp() {
+        keyCommands = mock(KeyCommands.class);
+        valueCommands = mock(ValueCommands.class);
+
         when(ds.key()).thenReturn(keyCommands);
-        when(ds.string(String.class)).thenReturn(stringCommands);
+        when(ds.value(String.class)).thenReturn(valueCommands);
+
+        redisService = new RedisService(ds);
     }
 
     @Test
     @DisplayName("get() - verify proper result if no such key found")
     void getNoSuchKey() {
-        when(stringCommands.get(eq("some_random_key")))
+        when(valueCommands.get(eq("some_random_key")))
                 .thenReturn(null);
 
         assertNull(redisService.get("some_random_key"));
 
-        verify(stringCommands).get(eq("some_random_key"));
+        verify(valueCommands).get(eq("some_random_key"));
     }
 
     @Test
     void get() {
-        when(stringCommands.get(eq("a")))
+        when(valueCommands.get(eq("a")))
                 .thenReturn(String.valueOf(2));
 
         assertEquals("2", redisService.get("a"));
@@ -69,7 +65,7 @@ class RedisServiceTest {
 
     @Test
     void increment() {
-        when(stringCommands.incr(eq("b")))
+        when(valueCommands.incr(eq("b")))
                 .thenReturn(3L);
 
         assertEquals("3", redisService.increment("b"));
@@ -79,7 +75,7 @@ class RedisServiceTest {
     void set() {
         redisService.set("c", 4);
 
-        verify(stringCommands).set(eq("c"), eq("4"));
+        verify(valueCommands).set(eq("c"), eq("4"));
     }
 
     @Test

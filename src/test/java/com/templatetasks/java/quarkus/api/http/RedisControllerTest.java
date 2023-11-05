@@ -2,8 +2,8 @@ package com.templatetasks.java.quarkus.api.http;
 
 import com.templatetasks.java.quarkus.Constants;
 import com.templatetasks.java.quarkus.cache.redis.RedisService;
+import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
-import io.quarkus.test.junit.mockito.InjectMock;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
