@@ -8,10 +8,10 @@ Redis official images could be found [here](https://hub.docker.com/_/redis).
 ### How to run it locally in Docker
 
 ```shell
-docker run -d --name redis6 \
+docker run -d --name redis72 \
   --network=localnet \
   -p 6379:6379 \
-  redis:6.2.14-alpine
+  redis:7.2.3-alpine
 ```
 
 ### Network

@@ -18,8 +18,8 @@ services:
       retries: 10
       start_period: 15s
   redis:
-    image: redis:6.2.14-alpine
-    container_name: "quarkus-redis6"
+    image: redis:7.2.3-alpine
+    container_name: "quarkus-redis72"
     ports:
       - "6379:6379"
     networks:
@@ -48,7 +48,7 @@ services:
       - "database.username=${DB_USERNAME}"
       - "database.password=${DB_PASSWORD}"
       - "jaeger.host=quarkus-jaeger"
-      - "redis.host=quarkus-redis6"
+      - "redis.host=quarkus-redis72"
     ports:
       - "8080:8080"
     networks:
