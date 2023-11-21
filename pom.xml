@@ -57,6 +57,9 @@
         <lombok.version>1.18.30</lombok.version>
         <lombok.mapstruct.binding.version>0.2.0</lombok.mapstruct.binding.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
+
+        <!-- 3-rd party Maven plugins -->
+        <maven.versions.plugin.version>2.16.2</maven.versions.plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -271,6 +274,14 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${maven.versions.plugin.version}</version>
+                <configuration>
+                    <rulesUri>file://${project.basedir}/maven-version-rules.xml</rulesUri>
+                </configuration>
             </plugin>
         </plugins>
     </build>
