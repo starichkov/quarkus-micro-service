@@ -1,6 +1,6 @@
 services:
   mysql:
-    image: mysql:8.0.35
+    image: mysql:8.0.36
     container_name: "quarkus-mysql8"
     environment:
       - "MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}"
@@ -18,14 +18,14 @@ services:
       retries: 10
       start_period: 15s
   redis:
-    image: redis:7.2.3-alpine
+    image: redis:7.2.4-alpine
     container_name: "quarkus-redis72"
     ports:
       - "6379:6379"
     networks:
       - "composenet"
   jaeger:
-    image: jaegertracing/all-in-one:1.51
+    image: jaegertracing/all-in-one:1.54
     container_name: "quarkus-jaeger"
     environment:
       - "COLLECTOR_ZIPKIN_HOST_PORT=:9411"
@@ -67,7 +67,7 @@ services:
       retries: 10
       start_period: 5s
   prometheus:
-    image: prom/prometheus:v2.47.2
+    image: prom/prometheus:v2.49.1
     build:
       context: configuration/prometheus
       dockerfile: Dockerfile
