@@ -55,7 +55,7 @@ http://localhost:8080/q/health-ui/
 
 ### Docker
 
-This service contains two Dockerfile-s, [more details](/documentation/DOCKER.md) on the separate page.
+This service contains two Dockerfile-s, [more details](/documentation/docker.md) on the separate page.
 
 ### 3rd party libraries features
 

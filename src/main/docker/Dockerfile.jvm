@@ -23,7 +23,7 @@
 ###
 #FROM registry.access.redhat.com/ubi8/ubi-minimal:8.4
 
-FROM alpine:3.17.4
+FROM alpine:3.20.1
 RUN apk update && apk upgrade
 RUN apk --no-cache add openjdk17-jre-headless --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 
