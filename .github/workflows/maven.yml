@@ -30,7 +30,8 @@ jobs:
     - name: Build with Maven
       run: mvn clean verify -U
     - name: Coverage
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
         file: ./target/jacoco-report/jacoco.xml
         name: codecov
+        token: ${{ secrets.CODECOV_TOKEN }}
