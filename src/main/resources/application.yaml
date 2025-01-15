@@ -1,7 +1,7 @@
 database:
   schema: quarkus_db
   host: localhost
-  port: 3306
+  port: 5432
 
 jaeger:
   host: localhost
@@ -15,10 +15,10 @@ quarkus:
   datasource:
     username: ${database.username}
     password: ${database.password}
-    db-kind: mysql
+    db-kind: postgresql
     jdbc:
-      url: jdbc:mysql://${database.host}:${database.port}/${database.schema}
-      driver: com.mysql.cj.jdbc.Driver
+      url: jdbc:postgresql://${database.host}:${database.port}/${database.schema}
+      driver: org.postgresql.Driver
   flyway:
     migrate-at-start: true
     schemas: ${database.schema}

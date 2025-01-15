@@ -1,18 +1,24 @@
 services:
-  mysql:
-    image: mysql:8.0.40
-    container_name: "quarkus-mysql8"
+  postgres:
+    image: postgres:17.2-alpine3.21
+    container_name: "quarkus-postgres17"
+    restart: always
     environment:
-      - "MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}"
-      - "MYSQL_DATABASE=quarkus_db"
-      - "MYSQL_USER=${DB_USERNAME}"
-      - "MYSQL_PASSWORD=${DB_PASSWORD}"
+      - "POSTGRES_DB=quarkus_db"
+      - "POSTGRES_USER=${DB_USERNAME}"
+      - "POSTGRES_PASSWORD=${DB_PASSWORD}"
+      - "PGDATABASE=quarkus_db"
+      - "PGUSER=${DB_USERNAME}"
+      - "PGPASSWORD=${DB_PASSWORD}"
+# PGUSER - https://stackoverflow.com/a/60194261
     ports:
-      - "3306:3306"
+      - "5432:5432"
     networks:
       - "quarkusnet"
     healthcheck:
-      test: "/usr/bin/mysql --user=root --password=${MYSQL_PASSWORD} --execute \"SHOW DATABASES;\""
+      test: ["CMD-SHELL", "pg_isready"]
+#      test: ["CMD-SHELL", "pg_isready", "-U", "${POSTGRES_USER}", "-d", "${POSTGRES_DB}"]
+#      test: ["CMD-SHELL", "sh -c 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'"]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -44,7 +50,7 @@ services:
     build: .
     container_name: "quarkus-micro-service"
     environment:
-      - "database.host=quarkus-mysql8"
+      - "database.host=quarkus-postgres17"
       - "database.username=${DB_USERNAME}"
       - "database.password=${DB_PASSWORD}"
       - "jaeger.host=quarkus-jaeger"
@@ -54,7 +60,7 @@ services:
     networks:
       - "quarkusnet"
     depends_on:
-      mysql:
+      postgres:
         condition: service_healthy
       jaeger:
         condition: service_started

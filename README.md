@@ -6,12 +6,12 @@ Quarkus microservice
 =
 This project is a Quarkus framework based, 'ready-to-play' micro-service.
 
-| Name    | Version |
-|---------|---------|
-| Java    | 21      |
-| Maven   | 3.8.1+  |
-| Quarkus | 3.17.6  |
-| MySQL   | 8.0.x   |
+| Name       | Version |
+|------------|---------|
+| Java       | 21      |
+| Maven      | 3.8.1+  |
+| Quarkus    | 3.17.6  |
+| PostgreSQL | 17.2    |
 
 ## What's inside?
 
@@ -33,7 +33,7 @@ This service contains multiple features which requires some specific servers to 
 
 | Feature     | Requirement   | How to run in Docker                       | How to disable                     |
 |-------------|---------------|--------------------------------------------|------------------------------------|
-| Database    | MySQL server  | [mysql.md](/documentation/mysql.md)        | - required -                       |
+| Database    | PostgreSQL    | [postgres.md](/documentation/postgres.md)  | - required -                       |
 | Redis       | Redis server  | [redis.md](/documentation/redis.md)        |                                    |
 | Opentracing | Jaeger server | [jaeger.md](/documentation/jaeger.md)      |                                    |
 | Metrics     | Prometheus    | [metrics.md](/documentation/prometheus.md) | `quarkus.micrometer.enabled=false` |

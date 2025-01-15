@@ -1,4 +1,14 @@
+###
+
+POST http://localhost:8080/examples/quarkus/jedi?name=Obi-Wan%20Kenobi&title=Higher%20Ground
+
+###
+
 GET http://localhost:8080/examples/quarkus/jedi/Obi-Wan
+
+###
+
+POST http://localhost:8080/examples/quarkus/jedi?name=Anakin&title=Not%20A%20Master
 
 ###
 
@@ -11,6 +21,10 @@ GET http://localhost:8080/examples/quarkus/jedi/Kirk
 ###
 
 POST http://localhost:8080/examples/quarkus/jedi?name=Joda&title=Uber Jedi
+
+###
+
+GET http://localhost:8080/examples/quarkus/jedi/Joda
 
 ###
 

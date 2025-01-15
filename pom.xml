@@ -52,6 +52,7 @@
         <!-- Quarkus -->
         <quarkus.package.type>uber-jar</quarkus.package.type>
         <quarkus.version>3.17.6</quarkus.version>
+        <mockito.version>5.14.2</mockito.version>
 
         <!-- 3-rd party libraries -->
         <lombok.version>1.18.36</lombok.version>
@@ -95,11 +96,11 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-jdbc-mysql</artifactId>
+            <artifactId>quarkus-jdbc-postgresql</artifactId>
         </dependency>
         <dependency>
             <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-mysql</artifactId>
+            <artifactId>flyway-database-postgresql</artifactId>
         </dependency>
 
         <!-- Quarkus: Configuration -->
@@ -228,6 +229,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
+                    <argLine>-javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito.version}/mockito-core-${mockito.version}.jar</argLine>
                     <systemPropertyVariables>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                         <maven.home>${maven.home}</maven.home>
