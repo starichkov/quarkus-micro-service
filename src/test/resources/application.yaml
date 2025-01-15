@@ -16,6 +16,8 @@ quarkus:
   log:
     category:
       "org.hibernate":
+        min-level: trace
         level: trace
       "org.postgresql":
+        min-level: trace
         level: trace
