@@ -11,7 +11,7 @@ quarkus:
   hibernate-orm:
     log:
       sql: true
-  jaeger:
+  otel:
     enabled: false
   log:
     category:

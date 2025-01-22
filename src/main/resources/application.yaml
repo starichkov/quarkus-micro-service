@@ -5,13 +5,15 @@ database:
 
 jaeger:
   host: localhost
-  port: 14268
+  port: 4317
 
 redis:
   host: localhost
   port: 6379
 
 quarkus:
+  application:
+    name: quarkus-micro-service
   datasource:
     username: ${database.username}
     password: ${database.password}
@@ -25,12 +27,10 @@ quarkus:
   hibernate-orm:
     database:
       default-schema: ${database.schema}
-  jaeger:
-    sampler-type: const
-    sampler-param: 1
-    # these 2 lines needed to push data to backend, comment to use no-op instead
-    service-name: quarkus-micro-service
-    endpoint: http://${jaeger.host}:${jaeger.port}/api/traces
+  otel:
+    exporter:
+      otlp:
+        endpoint: http://${jaeger.host}:${jaeger.port}
   log:
     console:
       format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p traceId=%X{traceId}, parentId=%X{parentId}, spanId=%X{spanId}, sampled=%X{sampled} [%c{3.}] (%t) %s%e%n"
