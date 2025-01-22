@@ -25,18 +25,18 @@ This project is a Quarkus framework based, 'ready-to-play' micro-service.
 - Health check endpoints ([official guide](https://quarkus.io/guides/smallrye-health))
 - Scheduled tasks configured to use Unix [Crontab](https://crontab.guru/) syntax ([official guide](https://quarkus.io/guides/scheduler-reference))
 - Redis client with health indicator ([official guide](https://quarkus.io/guides/redis))
-- OpenTracing support ([official guide](https://quarkus.io/guides/opentracing))
+- OpenTelemetry support ([official guide](https://quarkus.io/guides/opentelemetry))
 - EventBus (alternative to Spring's ApplicationEvent system, [official guide](https://quarkus.io/guides/reactive-event-bus))
 - Qute templating engine (special-for-Quarkus alternative to Freemarker or Mustache engines, [official guide](https://quarkus.io/guides/qute-reference))
 
 This service contains multiple features which requires some specific servers to be available and resolvable:
 
-| Feature     | Requirement   | How to run in Docker                       | How to disable                     |
-|-------------|---------------|--------------------------------------------|------------------------------------|
-| Database    | PostgreSQL    | [postgres.md](/documentation/postgres.md)  | - required -                       |
-| Redis       | Redis server  | [redis.md](/documentation/redis.md)        |                                    |
-| Opentracing | Jaeger server | [jaeger.md](/documentation/jaeger.md)      |                                    |
-| Metrics     | Prometheus    | [metrics.md](/documentation/prometheus.md) | `quarkus.micrometer.enabled=false` |
+| Feature       | Requirement   | How to run in Docker                       | How to disable                     |
+|---------------|---------------|--------------------------------------------|------------------------------------|
+| Database      | PostgreSQL    | [postgres.md](/documentation/postgres.md)  | - required -                       |
+| Redis         | Redis server  | [redis.md](/documentation/redis.md)        |                                    |
+| OpenTelemetry | Jaeger server | [jaeger.md](/documentation/jaeger.md)      |                                    |
+| Metrics       | Prometheus    | [metrics.md](/documentation/prometheus.md) | `quarkus.micrometer.enabled=false` |
 
 #### Health check
 
