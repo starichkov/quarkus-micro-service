@@ -1,9 +1,11 @@
 Jaeger
 =
 
+Jaeger 1.x has been deprecated. This documentation page now covers Jaeger 2.x only.
+
 ## Docker
 
-Jaeger images could be found [here](https://hub.docker.com/r/jaegertracing/all-in-one).
+Jaeger images could be found [here](https://hub.docker.com/r/jaegertracing/jaeger).
 
 ### How to run it locally in Docker
 
@@ -15,16 +17,20 @@ Below I will only re-post a part of their documentation.
 docker run -d --name jaeger \
   --network=localnet \
   -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
-  -p 5775:5775/udp \
-  -p 6831:6831/udp \
-  -p 6832:6832/udp \
+  -p 4317:4317 \
+  -p 4318:4318 \
   -p 5778:5778 \
-  -p 16686:16686 \
-  -p 14268:14268 \
-  -p 14250:14250 \
   -p 9411:9411 \
-  jaegertracing/all-in-one:1.59
+  -p 16686:16686 \
+  jaegertracing/jaeger:2.2.0
 ```
+
+Ports:
+- `4317` - OTLP gRPC receiver
+- `4318` - OTLP HTTP receiver
+- `5778` - HTTP endpoint for dynamic sampling strategies - this allows the agent to fetch sampling configurations from the Jaeger collector
+- `9411` - Zipkin compatibility
+- `16686` - Jaeger UI
 
 Jaeger UI will become accessible via `http://localhost:16686`.
 
