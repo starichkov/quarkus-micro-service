@@ -51,7 +51,7 @@
 
         <!-- Quarkus -->
         <quarkus.package.jar.type>uber-jar</quarkus.package.jar.type>
-        <quarkus.version>3.17.8</quarkus.version>
+        <quarkus.version>3.18.1</quarkus.version>
         <mockito.version>5.14.2</mockito.version>
 
         <!-- 3-rd party libraries -->
