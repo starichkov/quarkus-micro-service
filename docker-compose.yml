@@ -31,7 +31,7 @@ services:
     networks:
       - "quarkusnet"
   jaeger:
-    image: jaegertracing/jaeger:2.2.0
+    image: jaegertracing/jaeger:2.4.0
     container_name: "quarkus-jaeger"
     environment:
       - "COLLECTOR_ZIPKIN_HOST_PORT=:9411"
