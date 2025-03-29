@@ -7,7 +7,7 @@ jaeger:
   host: localhost
   port: 4317
 
-redis:
+valkey:
   host: localhost
   port: 6379
 
@@ -35,7 +35,7 @@ quarkus:
     console:
       format: "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p traceId=%X{traceId}, parentId=%X{parentId}, spanId=%X{spanId}, sampled=%X{sampled} [%c{3.}] (%t) %s%e%n"
   redis:
-    hosts: redis://${redis.host}:${redis.port}
+    hosts: redis://${valkey.host}:${valkey.port}
   scheduler:
     cron-type: unix
 

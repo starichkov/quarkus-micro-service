@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21.0.5_11-jre-alpine
+FROM eclipse-temurin:21.0.6_7-jre-alpine-3.21
 
 ENV RUN_USER=java-runner
 ENV RUN_GROUP=${RUN_USER}

@@ -12,6 +12,7 @@ This project is a Quarkus framework based, 'ready-to-play' micro-service.
 | Maven      | 3.8.1+  |
 | Quarkus    | 3.21.0  |
 | PostgreSQL | 17.4    |
+| Valkey     | 7.2.8   |
 
 ## What's inside?
 
@@ -28,7 +29,7 @@ Separate `edge` branch will be using latest versions, and when it will reach nex
 - H2 database for test scope
 - Health check endpoints ([official guide](https://quarkus.io/guides/smallrye-health))
 - Scheduled tasks configured to use Unix [Crontab](https://crontab.guru/) syntax ([official guide](https://quarkus.io/guides/scheduler-reference))
-- Redis client with health indicator ([official guide](https://quarkus.io/guides/redis))
+- Redis/Valkey client with health indicator ([official guide](https://quarkus.io/guides/redis))
 - OpenTelemetry support ([official guide](https://quarkus.io/guides/opentelemetry))
 - EventBus (alternative to Spring's ApplicationEvent system, [official guide](https://quarkus.io/guides/reactive-event-bus))
 - Qute templating engine (special-for-Quarkus alternative to Freemarker or Mustache engines, [official guide](https://quarkus.io/guides/qute-reference))
@@ -38,7 +39,7 @@ This service contains multiple features which requires some specific servers to 
 | Feature       | Requirement   | How to run in Docker                       | How to disable                     |
 |---------------|---------------|--------------------------------------------|------------------------------------|
 | Database      | PostgreSQL    | [postgres.md](/documentation/postgres.md)  | - required -                       |
-| Redis         | Redis server  | [redis.md](/documentation/redis.md)        |                                    |
+| Valkey        | Valkey server | [valkey.md](/documentation/valkey.md)      |                                    |
 | OpenTelemetry | Jaeger server | [jaeger.md](/documentation/jaeger.md)      |                                    |
 | Metrics       | Prometheus    | [metrics.md](/documentation/prometheus.md) | `quarkus.micrometer.enabled=false` |
 

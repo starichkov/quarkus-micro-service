@@ -10,7 +10,7 @@ PostgreSQL official images could be found [here](https://hub.docker.com/_/postgr
 ```shell
 docker run -d --name postgres17a \
   --network=localnet \
-  -e POSTGRES_PASSWORD=REPLACE_WITH_ROOT_PASSWORD \
+  -e POSTGRES_PASSWORD='REPLACE_WITH_ROOT_PASSWORD' \
   -p 5432:5432 \
   postgres:17.4-alpine3.21
 ```

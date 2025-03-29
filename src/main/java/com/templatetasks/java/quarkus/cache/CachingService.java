@@ -1,4 +1,4 @@
-package com.templatetasks.java.quarkus.cache.redis;
+package com.templatetasks.java.quarkus.cache;
 
 import io.quarkus.redis.datasource.RedisDataSource;
 import io.quarkus.redis.datasource.keys.KeyCommands;
@@ -12,13 +12,13 @@ import jakarta.inject.Inject;
  * @since 06.08.2021 14:49
  */
 @ApplicationScoped
-public class RedisService {
+public class CachingService {
 
     private final KeyCommands<String> keyCommands;
     private final ValueCommands<String, String> valueCommands;
 
     @Inject
-    public RedisService(RedisDataSource ds) {
+    public CachingService(RedisDataSource ds) {
         this.keyCommands = ds.key();
         this.valueCommands = ds.value(String.class);
     }

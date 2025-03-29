@@ -1,0 +1,15 @@
+# testing POST (set)
+
+POST http://localhost:8080/examples/quarkus/cache/keyA/47
+
+### testing GET (get)
+
+GET http://localhost:8080/examples/quarkus/cache/keyA
+
+### testing PATCH (incerement)
+
+PATCH http://localhost:8080/examples/quarkus/cache/keyA
+
+### testing DELETE (delete)
+
+DELETE http://localhost:8080/examples/quarkus/cache/keyA

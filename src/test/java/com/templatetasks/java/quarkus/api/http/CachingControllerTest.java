@@ -1,7 +1,7 @@
 package com.templatetasks.java.quarkus.api.http;
 
 import com.templatetasks.java.quarkus.Constants;
-import com.templatetasks.java.quarkus.cache.redis.RedisService;
+import com.templatetasks.java.quarkus.cache.CachingService;
 import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.DisplayName;
@@ -18,75 +18,75 @@ import static org.mockito.Mockito.*;
  * @since 07.08.2021 15:41
  */
 @QuarkusTest
-@DisplayName("RedisController endpoints tests")
-class RedisControllerTest {
+@DisplayName("CachingController endpoints tests")
+class CachingControllerTest {
 
     @InjectMock
-    RedisService redisService;
+    CachingService cachingService;
 
     @Test
-    @DisplayName("Endpoint 'GET /redis/{key}' test with no item found")
+    @DisplayName("Endpoint 'GET /cache/{key}' test with no item found")
     void getNoSuchKey() {
         when()
-                .get(Constants.REDIS_ENDPOINT + "/{key}", "some_random_key")
+                .get(Constants.CACHE_ENDPOINT + "/{key}", "some_random_key")
                 .then()
                 .statusCode(204);
 
-        verify(redisService).get(eq("some_random_key"));
+        verify(cachingService).get(eq("some_random_key"));
     }
 
     @Test
-    @DisplayName("Endpoint 'GET /redis/{key}' test")
+    @DisplayName("Endpoint 'GET /cache/{key}' test")
     void get() {
-        Mockito.when(redisService.get(eq("a")))
+        Mockito.when(cachingService.get(eq("a")))
                .thenReturn("2");
 
         when()
-                .get(Constants.REDIS_ENDPOINT + "/{key}", "a")
+                .get(Constants.CACHE_ENDPOINT + "/{key}", "a")
                 .then()
                 .statusCode(200)
                 .assertThat()
                 .body(equalTo("2"));
 
-        verify(redisService).get(eq("a"));
+        verify(cachingService).get(eq("a"));
     }
 
     @Test
-    @DisplayName("Endpoint 'PATCH /redis/{key}' test")
+    @DisplayName("Endpoint 'PATCH /cache/{key}' test")
     void increment() {
-        Mockito.when(redisService.increment(eq("b")))
+        Mockito.when(cachingService.increment(eq("b")))
                .thenReturn("3");
 
         when()
-                .patch(Constants.REDIS_ENDPOINT + "/{key}", "b")
+                .patch(Constants.CACHE_ENDPOINT + "/{key}", "b")
                 .then()
                 .statusCode(200)
                 .assertThat()
                 .body(equalTo("3"));
 
-        verify(redisService).increment(eq("b"));
+        verify(cachingService).increment(eq("b"));
     }
 
     @Test
-    @DisplayName("Endpoint 'POST /redis/{key}/{value}' test")
+    @DisplayName("Endpoint 'POST /cache/{key}/{value}' test")
     void set() {
         when()
-                .post(Constants.REDIS_ENDPOINT + "/{key}/{value}", "c", "4")
+                .post(Constants.CACHE_ENDPOINT + "/{key}/{value}", "c", "4")
                 .then()
                 .statusCode(204);
 
-        verify(redisService).set(eq("c"), eq(4));
+        verify(cachingService).set(eq("c"), eq(4));
     }
 
     @Test
-    @DisplayName("Endpoint 'DELETE /redis/{key}' test")
+    @DisplayName("Endpoint 'DELETE /cache/{key}' test")
     void delete() {
         when()
-                .delete(Constants.REDIS_ENDPOINT + "/{key}", "d")
+                .delete(Constants.CACHE_ENDPOINT + "/{key}", "d")
                 .then()
                 .statusCode(204);
 
-        verify(redisService).delete(eq("d"));
+        verify(cachingService).delete(eq("d"));
 
     }
 }
