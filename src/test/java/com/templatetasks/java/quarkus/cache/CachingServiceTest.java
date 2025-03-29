@@ -1,4 +1,4 @@
-package com.templatetasks.java.quarkus.cache.redis;
+package com.templatetasks.java.quarkus.cache;
 
 import io.quarkus.redis.datasource.RedisDataSource;
 import io.quarkus.redis.datasource.keys.KeyCommands;
@@ -21,10 +21,10 @@ import static org.mockito.Mockito.when;
  * @since 06.08.2021 15:23
  */
 @QuarkusTest
-@DisplayName("RedisService methods tests")
-class RedisServiceTest {
+@DisplayName("CachingService methods tests")
+class CachingServiceTest {
 
-    RedisService redisService;
+    CachingService cachingService;
 
     @InjectMock
     private RedisDataSource ds;
@@ -41,7 +41,7 @@ class RedisServiceTest {
         when(ds.key()).thenReturn(keyCommands);
         when(ds.value(String.class)).thenReturn(valueCommands);
 
-        redisService = new RedisService(ds);
+        cachingService = new CachingService(ds);
     }
 
     @Test
@@ -50,7 +50,7 @@ class RedisServiceTest {
         when(valueCommands.get(eq("some_random_key")))
                 .thenReturn(null);
 
-        assertNull(redisService.get("some_random_key"));
+        assertNull(cachingService.get("some_random_key"));
 
         verify(valueCommands).get(eq("some_random_key"));
     }
@@ -60,7 +60,7 @@ class RedisServiceTest {
         when(valueCommands.get(eq("a")))
                 .thenReturn(String.valueOf(2));
 
-        assertEquals("2", redisService.get("a"));
+        assertEquals("2", cachingService.get("a"));
     }
 
     @Test
@@ -68,19 +68,19 @@ class RedisServiceTest {
         when(valueCommands.incr(eq("b")))
                 .thenReturn(3L);
 
-        assertEquals("3", redisService.increment("b"));
+        assertEquals("3", cachingService.increment("b"));
     }
 
     @Test
     void set() {
-        redisService.set("c", 4);
+        cachingService.set("c", 4);
 
         verify(valueCommands).set(eq("c"), eq("4"));
     }
 
     @Test
     void delete() {
-        redisService.delete("d");
+        cachingService.delete("d");
 
         verify(keyCommands).del(eq("d"));
     }
