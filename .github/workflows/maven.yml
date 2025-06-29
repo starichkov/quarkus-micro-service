@@ -8,11 +8,21 @@ on:
     branches:
       - main
       - edge
+  pull_request:
+    branches:
+      - main
+      - edge
 
 jobs:
   build:
 
     runs-on: ubuntu-24.04
+
+    services:
+      # This is needed for Testcontainers to detect Docker
+      docker:
+        image: docker:28.3.0-dind-alpine3.22
+        options: --privileged
 
     steps:
     - uses: actions/checkout@v4
