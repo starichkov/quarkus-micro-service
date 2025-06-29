@@ -47,15 +47,9 @@ public class JediController {
     public Response addJedi(@QueryParam("name") String name, @QueryParam("title") String title) {
         logger.info("New Jedi request received, processing");
         Jedi jedi = jediService.addJedi(name, title);
-        if (jedi == null) {
-            logger.error("Was not able to add new Jedi.");
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                           .build();
-        } else {
-            eventService.send(jedi);
-            return Response.ok(jedi)
-                           .build();
-        }
+        eventService.send(jedi);
+        return Response.ok(jedi)
+                       .build();
     }
 
     @DELETE

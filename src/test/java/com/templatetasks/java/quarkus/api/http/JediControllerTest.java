@@ -62,6 +62,30 @@ class JediControllerTest {
     }
 
     @Test
+    @DisplayName("POST '/jedi' test, attempt to create already existing Jedi")
+    void testAddTheSameJedi() {
+        Jedi response = given()
+                                .queryParam("name", "Existing Jedi")
+                                .queryParam("title", "Useless Jedi")
+                                .post(Constants.JEDI_ENDPOINT)
+                                .then()
+                                .statusCode(200)
+                                .extract()
+                                .as(Jedi.class);
+
+        assertNotNull(response);
+        assertEquals("Existing Jedi", response.name());
+        assertEquals("Useless Jedi", response.title());
+
+        given()
+                .queryParam("name", "Existing Jedi")
+                .queryParam("title", "Useless Jedi")
+                .post(Constants.JEDI_ENDPOINT)
+                .then()
+                .statusCode(500);
+    }
+
+    @Test
     @DisplayName("DELETE '/jedi' test")
     void testDeleteJediEndpoint() {
         given()
