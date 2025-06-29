@@ -11,7 +11,7 @@ This project is a Quarkus framework based, 'ready-to-play' micro-service.
 | Java       | 21      |
 | Maven      | 3.8.1+  |
 | Quarkus    | 3.24.1  |
-| PostgreSQL | 17.4    |
+| PostgreSQL | 17.5    |
 | Valkey     | 7.2.8   |
 
 ## What's inside?

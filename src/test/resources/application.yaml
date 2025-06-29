@@ -1,13 +1,14 @@
 database:
-  username: sa
-  password: none
+  username: postgres
+  password: postgres
 
 quarkus:
   datasource:
-    db-kind: h2
-    jdbc:
-      url: jdbc:h2:mem:${database.schema};MODE=POSTGRESQL;DATABASE_TO_UPPER=false;DB_CLOSE_DELAY=-1
-      driver: org.h2.Driver
+    devservices:
+      enabled: true
+      port: 5432
+      db-name: ${database.schema}
+      image-name: postgres:17.5-alpine3.22
   hibernate-orm:
     log:
       sql: true
