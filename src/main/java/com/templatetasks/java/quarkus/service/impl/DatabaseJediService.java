@@ -11,7 +11,8 @@ import jakarta.enterprise.inject.Default;
 import jakarta.inject.Inject;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
-import java.util.stream.*;
+
+import java.util.stream.Stream;
 
 /**
  * @author Vadim Starichkov (starichkovva@gmail.com)
@@ -39,8 +40,8 @@ public class DatabaseJediService implements JediService {
     @Timed("jedi.get.timed")
     @Override
     public Jedi getJedi(String name) {
-        TypedQuery<JediEntity> query = em.createQuery("select j from JediEntity j where j.name like :name", JediEntity.class);
-        query.setParameter("name", name + '%');
+        TypedQuery<JediEntity> query = em.createQuery("select j from JediEntity j where j.name = :name", JediEntity.class);
+        query.setParameter("name", name);
 
         Stream<JediEntity> results = query.getResultStream();
         JediEntity result = results.findFirst()

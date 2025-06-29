@@ -24,7 +24,7 @@ class JediControllerTest {
     @DisplayName("Endpoint '/jedi' test, Jedi exists")
     void testGetJediEndpoint() {
         Jedi response = when()
-                .get(Constants.JEDI_ENDPOINT + "/{name}", "Obi-Wan")
+                .get(Constants.JEDI_ENDPOINT + "/{name}", "Obi-Wan Kenobi")
                 .then()
                 .statusCode(200)
                 .extract()
@@ -59,6 +59,30 @@ class JediControllerTest {
         assertNotNull(response);
         assertEquals("Joda", response.name());
         assertEquals("Uber Jedi", response.title());
+    }
+
+    @Test
+    @DisplayName("POST '/jedi' test, attempt to create already existing Jedi")
+    void testAddTheSameJedi() {
+        Jedi response = given()
+                                .queryParam("name", "Existing Jedi")
+                                .queryParam("title", "Useless Jedi")
+                                .post(Constants.JEDI_ENDPOINT)
+                                .then()
+                                .statusCode(200)
+                                .extract()
+                                .as(Jedi.class);
+
+        assertNotNull(response);
+        assertEquals("Existing Jedi", response.name());
+        assertEquals("Useless Jedi", response.title());
+
+        given()
+                .queryParam("name", "Existing Jedi")
+                .queryParam("title", "Useless Jedi")
+                .post(Constants.JEDI_ENDPOINT)
+                .then()
+                .statusCode(500);
     }
 
     @Test
