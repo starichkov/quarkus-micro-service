@@ -24,7 +24,7 @@ class JediControllerTest {
     @DisplayName("Endpoint '/jedi' test, Jedi exists")
     void testGetJediEndpoint() {
         Jedi response = when()
-                .get(Constants.JEDI_ENDPOINT + "/{name}", "Obi-Wan")
+                .get(Constants.JEDI_ENDPOINT + "/{name}", "Obi-Wan Kenobi")
                 .then()
                 .statusCode(200)
                 .extract()
