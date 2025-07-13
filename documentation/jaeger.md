@@ -22,7 +22,7 @@ docker run -d --name jaeger \
   -p 5778:5778 \
   -p 9411:9411 \
   -p 16686:16686 \
-  jaegertracing/jaeger:2.4.0
+  jaegertracing/jaeger:2.8.0
 ```
 
 Ports:

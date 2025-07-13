@@ -24,14 +24,14 @@ services:
       retries: 10
       start_period: 15s
   valkey:
-    image: valkey/valkey:7.2.8-alpine3.21
+    image: valkey/valkey:7.2.10-alpine3.22
     container_name: "quarkus-valkey72a"
     ports:
       - "6379:6379"
     networks:
       - "quarkusnet"
   jaeger:
-    image: jaegertracing/jaeger:2.4.0
+    image: jaegertracing/jaeger:2.8.0
     container_name: "quarkus-jaeger"
     environment:
       - "COLLECTOR_ZIPKIN_HOST_PORT=:9411"

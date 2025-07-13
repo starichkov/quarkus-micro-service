@@ -11,7 +11,7 @@ Valkey official images could be found [here](https://hub.docker.com/r/valkey/val
 docker run -d --name valkey72a \
   --network=localnet \
   -p 6379:6379 \
-  valkey/valkey:7.2.8-alpine3.21
+  valkey/valkey:7.2.10-alpine3.22
 ```
 
 ### Network
