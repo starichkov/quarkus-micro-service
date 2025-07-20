@@ -1,7 +1,9 @@
 database:
-  schema: quarkus_db
-  host: localhost
-  port: 5432
+  name: ${DB_NAME:quarkus_db}
+  host: ${DB_HOST:localhost}
+  port: ${DB_PORT:5432}
+  username: ${DB_USERNAME}
+  password: ${DB_PASSWORD}
 
 jaeger:
   host: localhost
@@ -19,14 +21,14 @@ quarkus:
     password: ${database.password}
     db-kind: postgresql
     jdbc:
-      url: jdbc:postgresql://${database.host}:${database.port}/${database.schema}
+      url: jdbc:postgresql://${database.host}:${database.port}/${database.name}
       driver: org.postgresql.Driver
   flyway:
     migrate-at-start: true
-    schemas: ${database.schema}
+    schemas: ${database.name}
   hibernate-orm:
     database:
-      default-schema: ${database.schema}
+      default-schema: ${database.name}
   otel:
     exporter:
       otlp:
