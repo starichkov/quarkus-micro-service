@@ -12,12 +12,12 @@ RUN microdnf install -y shadow-utils && \
     useradd --home-dir /var/empty/${RUN_USER} --shell /sbin/nologin \
     --gid ${RUN_GROUP} --system ${RUN_USER} && \
     chown ${RUN_USER}:${RUN_GROUP} /var/log && \
-    printf "#!/bin/sh\nexec java \${JAVA_OPTIONS} -jar quarkus-micro-service-*[!cs].jar \"\$@\"\n" > ${RUN_DIR}/entrypoint.sh && \
+    printf "#!/bin/sh\nexec java \${JAVA_OPTIONS} -jar app.jar \"\$@\"\n" > ${RUN_DIR}/entrypoint.sh && \
     chmod +x ${RUN_DIR}/entrypoint.sh && \
     microdnf clean all
 
 WORKDIR ${RUN_DIR}
-ADD target/*.jar ${RUN_DIR}/
+ADD target/*-runner.jar ${RUN_DIR}/app.jar
 
 USER ${RUN_USER}
 
