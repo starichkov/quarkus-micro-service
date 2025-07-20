@@ -15,7 +15,7 @@ RUN mkdir -p ${RUN_DIR} &&\
     printf "#!/bin/sh\nexec java \${JAVA_OPTIONS} -jar quarkus-micro-service-*[!cs].jar \${@}\n" > ${RUN_DIR}/entrypoint.sh && chmod 755 ${RUN_DIR}/entrypoint.sh
 
 WORKDIR ${RUN_DIR}
-ADD target/*.jar ${RUN_DIR}/
+ADD target/*-runner.jar ${RUN_DIR}/app.jar
 
 USER ${RUN_USER}
 

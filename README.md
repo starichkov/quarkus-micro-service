@@ -77,6 +77,28 @@ List of features I am planning to add:
 - Migrate to multi-module Maven project
 - Native Build with GraalVM
 
+## Native executable with GraalVM
+
+### Build
+
+```shell
+mvn clean verify -Dnative
+```
+
+#### Dependencies
+
+```shell
+sudo apt install zlib1g-dev
+```
+
+### Run
+
+```shell
+export DB_USERNAME=...
+export DB_PASSWORD=...
+./target/quarkus-micro-service-1.0.0-runner
+```
+
 ## Limitations found
 
 Quarkus does not support/provide:

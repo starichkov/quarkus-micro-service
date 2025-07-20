@@ -1,13 +1,11 @@
-database:
-  username: postgres
-  password: postgres
-
 quarkus:
   datasource:
+    username: postgres
+    password: postgres
     devservices:
       enabled: true
       port: 5432
-      db-name: ${database.schema}
+      db-name: ${database.name}
       image-name: postgres:17.5-alpine3.22
   hibernate-orm:
     log:
