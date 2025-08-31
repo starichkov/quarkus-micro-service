@@ -6,7 +6,7 @@ quarkus:
       enabled: true
       port: 5432
       db-name: ${database.name}
-      image-name: postgres:17.5-alpine3.22
+      image-name: postgres:17.6-alpine3.22
   hibernate-orm:
     log:
       sql: true
