@@ -12,7 +12,7 @@ docker run -d --name postgres17a \
   --network=localnet \
   -e POSTGRES_PASSWORD=REPLACE_WITH_ROOT_PASSWORD \
   -p 5432:5432 \
-  postgres:17.5-alpine3.22
+  postgres:17.6-alpine3.22
 ```
 
 ### Prepare database and user
