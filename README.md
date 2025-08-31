@@ -6,12 +6,12 @@ Quarkus microservice
 =
 This project is a Quarkus framework based, 'ready-to-play' micro-service.
 
-| Name       | Version      |
-|------------|--------------|
-| Java       | 21           |
-| Maven      | 3.8.1+       |
-| Quarkus    | 3.20.2.1 (LTS) |
-| PostgreSQL | 17.5         |
+| Name       | Version        |
+|------------|----------------|
+| Java       | 21             |
+| Maven      | 3.8.1+         |
+| Quarkus    | 3.20.2.2 (LTS) |
+| PostgreSQL | 17.5           |
 
 ## What's inside?
 
