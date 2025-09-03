@@ -22,7 +22,7 @@ docker run -d --name jaeger \
   -p 5778:5778 \
   -p 9411:9411 \
   -p 16686:16686 \
-  jaegertracing/jaeger:2.8.0
+  jaegertracing/jaeger:2.9.0
 ```
 
 Ports:
@@ -32,7 +32,7 @@ Ports:
 - `9411` - Zipkin compatibility
 - `16686` - Jaeger UI
 
-Jaeger UI will become accessible via `http://localhost:16686`.
+Jaeger UI will become accessible via [localhost:16686](http://localhost:16686).
 
 Fresh Docker images of Jaeger Tracing could be found in [Docker Hub](https://hub.docker.com/r/jaegertracing/all-in-one/tags?page=1&ordering=last_updated).
 
