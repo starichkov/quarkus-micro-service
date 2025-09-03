@@ -12,7 +12,7 @@ This project is a Quarkus framework based, 'ready-to-play' micro-service.
 | Maven      | 3.8.1+  |
 | Quarkus    | 3.26.2  |
 | PostgreSQL | 17.6    |
-| Valkey     | 7.2.8   |
+| Valkey     | 7.2.10  |
 
 ## What's inside?
 
