@@ -31,7 +31,7 @@ services:
     networks:
       - "quarkusnet"
   jaeger:
-    image: jaegertracing/jaeger:2.8.0
+    image: jaegertracing/jaeger:2.9.0
     container_name: "quarkus-jaeger"
     environment:
       - "COLLECTOR_ZIPKIN_HOST_PORT=:9411"
@@ -71,7 +71,7 @@ services:
       retries: 10
       start_period: 5s
   prometheus:
-    image: prom/prometheus:v2.55.1
+    image: quarkus-prometheus:v3.5.0
     build:
       context: configuration/prometheus
       dockerfile: Dockerfile

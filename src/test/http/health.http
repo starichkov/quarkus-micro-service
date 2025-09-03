@@ -10,4 +10,4 @@ GET http://localhost:8080/q/health
 
 ###
 
-GET http://localhost:8080/q/metrics/
+GET http://localhost:8080/q/metrics

@@ -4,7 +4,7 @@ POST http://localhost:8080/examples/quarkus/jedi?name=Obi-Wan%20Kenobi&title=Hig
 
 ###
 
-GET http://localhost:8080/examples/quarkus/jedi/Obi-Wan
+GET http://localhost:8080/examples/quarkus/jedi/Obi-Wan%20Kenobi
 
 ###
 
