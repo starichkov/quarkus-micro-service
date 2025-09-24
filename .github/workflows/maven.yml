@@ -16,7 +16,13 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
+
+    services:
+      # This is needed for Testcontainers to detect Docker
+      docker:
+        image: docker:28.3.3-dind-alpine3.22
+        options: --privileged
 
     services:
       # This is needed for Testcontainers to detect Docker

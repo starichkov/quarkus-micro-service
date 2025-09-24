@@ -23,15 +23,15 @@ services:
       timeout: 5s
       retries: 10
       start_period: 15s
-  redis:
-    image: redis:7.2.7-alpine3.21
-    container_name: "quarkus-redis72"
+  valkey:
+    image: valkey/valkey:7.2.10-alpine3.22
+    container_name: "quarkus-valkey72a"
     ports:
       - "6379:6379"
     networks:
       - "quarkusnet"
   jaeger:
-    image: jaegertracing/jaeger:2.4.0
+    image: jaegertracing/jaeger:2.9.0
     container_name: "quarkus-jaeger"
     environment:
       - "COLLECTOR_ZIPKIN_HOST_PORT=:9411"
@@ -52,7 +52,7 @@ services:
       - "database.username=${DB_USERNAME}"
       - "database.password=${DB_PASSWORD}"
       - "jaeger.host=quarkus-jaeger"
-      - "redis.host=quarkus-redis72"
+      - "valkey.host=quarkus-valkey72a"
     ports:
       - "8080:8080"
     networks:
@@ -62,7 +62,7 @@ services:
         condition: service_healthy
       jaeger:
         condition: service_started
-      redis:
+      valkey:
         condition: service_started
     healthcheck:
       test: "wget -O- --tries=1 --no-verbose --quiet http://localhost:8080/q/health | grep UP || exit 1"
@@ -71,7 +71,7 @@ services:
       retries: 10
       start_period: 5s
   prometheus:
-    image: prom/prometheus:v2.55.1
+    image: quarkus-prometheus:v3.5.0
     build:
       context: configuration/prometheus
       dockerfile: Dockerfile

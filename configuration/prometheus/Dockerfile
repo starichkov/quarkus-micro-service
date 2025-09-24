@@ -1,3 +1,3 @@
-FROM prom/prometheus:v2.55.1 AS prometheus
+FROM prom/prometheus:v3.5.0 AS prometheus
 
-ADD prometheus.yml /etc/prometheus/
+ADD prometheus.yml /etc/prometheus/prometheus.yml

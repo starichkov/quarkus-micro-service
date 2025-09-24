@@ -9,7 +9,7 @@ public interface Constants {
     String BASE_ENDPOINT = "/examples/quarkus";
 
     String JEDI_ENDPOINT = BASE_ENDPOINT + "/jedi";
-    String REDIS_ENDPOINT = BASE_ENDPOINT + "/redis";
+    String CACHE_ENDPOINT = BASE_ENDPOINT + "/cache";
     String TEMPLATE_ENDPOINT = BASE_ENDPOINT + "/template";
 
     String EVENT_ADDRESS_NEW_JEDI = "jedi_order";
