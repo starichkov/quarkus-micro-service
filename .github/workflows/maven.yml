@@ -24,6 +24,12 @@ jobs:
         image: docker:28.3.3-dind-alpine3.22
         options: --privileged
 
+    services:
+      # This is needed for Testcontainers to detect Docker
+      docker:
+        image: docker:28.3.0-dind-alpine3.22
+        options: --privileged
+
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4
