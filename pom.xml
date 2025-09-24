@@ -59,7 +59,7 @@
         <quarkus.version>3.28.1</quarkus.version>
 
         <!-- 3-rd party libraries -->
-        <lombok.version>1.18.38</lombok.version>
+        <lombok.version>1.18.42</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
         <testcontainers.version>1.21.3</testcontainers.version>
 
@@ -167,13 +167,6 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-rest-qute</artifactId>
-        </dependency>
-
-        <!-- Quarkus: vulnerable dependencies overrides -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.18.0</version>
         </dependency>
 
         <dependency>
