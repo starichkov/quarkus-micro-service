@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21.0.7_6-jre-ubi9-minimal
+FROM eclipse-temurin:21.0.8_9-jre-ubi9-minimal
 
 ENV RUN_USER=java-runner
 ENV RUN_GROUP=${RUN_USER}

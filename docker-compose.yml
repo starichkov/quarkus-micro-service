@@ -24,14 +24,14 @@ services:
       retries: 10
       start_period: 15s
   valkey:
-    image: valkey/valkey:7.2.10-alpine3.22
+    image: valkey/valkey:7.2.11-alpine3.22
     container_name: "quarkus-valkey72a"
     ports:
       - "6379:6379"
     networks:
       - "quarkusnet"
   jaeger:
-    image: jaegertracing/jaeger:2.9.0
+    image: jaegertracing/jaeger:2.11.0
     container_name: "quarkus-jaeger"
     environment:
       - "COLLECTOR_ZIPKIN_HOST_PORT=:9411"
@@ -71,7 +71,7 @@ services:
       retries: 10
       start_period: 5s
   prometheus:
-    image: quarkus-prometheus:v3.5.0
+    image: quarkus-prometheus:v3.6.0
     build:
       context: configuration/prometheus
       dockerfile: Dockerfile
