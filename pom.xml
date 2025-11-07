@@ -61,7 +61,7 @@
         <!-- 3-rd party libraries -->
         <lombok.version>1.18.42</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
-        <testcontainers.version>1.21.3</testcontainers.version>
+        <testcontainers.version>2.0.1</testcontainers.version>
 
         <!-- 3-rd party Maven plugins -->
         <maven.versions.plugin.version>2.19.1</maven.versions.plugin.version>
