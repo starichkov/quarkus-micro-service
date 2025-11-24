@@ -21,7 +21,7 @@ jobs:
     services:
       # This is needed for Testcontainers to detect Docker
       docker:
-        image: docker:28.3.3-dind-alpine3.22
+        image: docker:29.0.2-dind-alpine3.22
         options: --privileged
 
     steps:
