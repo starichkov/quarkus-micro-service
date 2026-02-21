@@ -52,11 +52,11 @@
         <maven.compiler.plugin.version>3.15.0</maven.compiler.plugin.version>
         <maven.dependency.plugin.version>3.10.0</maven.dependency.plugin.version>
         <maven.enforcer.plugin.version>3.6.2</maven.enforcer.plugin.version>
-        <maven.surefire.plugin.version>3.5.4</maven.surefire.plugin.version>
+        <maven.surefire.plugin.version>3.5.5</maven.surefire.plugin.version>
 
         <!-- Quarkus -->
         <quarkus.package.jar.type>uber-jar</quarkus.package.jar.type>
-        <quarkus.version>3.31.3</quarkus.version>
+        <quarkus.version>3.31.4</quarkus.version>
 
         <!-- 3-rd party libraries -->
         <lombok.version>1.18.42</lombok.version>
