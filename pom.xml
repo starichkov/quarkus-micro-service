@@ -56,7 +56,7 @@
         <maven.surefire.plugin.version>3.5.5</maven.surefire.plugin.version>
 
         <!-- Quarkus -->
-        <quarkus.version>3.32.3</quarkus.version>
+        <quarkus.version>3.32.4</quarkus.version>
 
         <!-- 3-rd party libraries -->
         <lombok.version>1.18.42</lombok.version>
