@@ -21,12 +21,12 @@ jobs:
     services:
       # This is needed for Testcontainers to detect Docker
       docker:
-        image: docker:29.0.4-dind-alpine3.22
+        image: docker:29.3.1-dind-alpine3.23
         options: --privileged
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
       name: Set up JDK 25
       with:
         java-version: '25'
