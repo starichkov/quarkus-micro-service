@@ -6,6 +6,7 @@
     <groupId>com.templatetasks.java</groupId>
     <artifactId>quarkus-micro-service</artifactId>
     <version>1.0.0</version>
+    <packaging>quarkus</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Quarkus sample microservice service with multiple features available</description>
@@ -41,7 +42,7 @@
 
     <properties>
         <!-- Project -->
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <argLine/>
 
@@ -49,14 +50,13 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
-        <maven.dependency.plugin.version>3.9.0</maven.dependency.plugin.version>
+        <maven.compiler.plugin.version>3.15.0</maven.compiler.plugin.version>
+        <maven.dependency.plugin.version>3.10.0</maven.dependency.plugin.version>
         <maven.enforcer.plugin.version>3.6.2</maven.enforcer.plugin.version>
-        <maven.surefire.plugin.version>3.5.4</maven.surefire.plugin.version>
+        <maven.surefire.plugin.version>3.5.5</maven.surefire.plugin.version>
 
         <!-- Quarkus -->
-        <quarkus.package.jar.type>uber-jar</quarkus.package.jar.type>
-        <quarkus.version>3.27.2</quarkus.version>
+        <quarkus.version>3.33.1</quarkus.version>
 
         <!-- 3-rd party libraries -->
         <lombok.version>1.18.42</lombok.version>
@@ -169,13 +169,6 @@
             <artifactId>quarkus-rest-qute</artifactId>
         </dependency>
 
-        <!-- Quarkus: vulnerable dependencies overrides -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.18.0</version>
-        </dependency>
-
         <dependency>
             <groupId>org.jboss.slf4j</groupId>
             <artifactId>slf4j-jboss-logmanager</artifactId>
@@ -201,12 +194,12 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-junit5</artifactId>
+            <artifactId>quarkus-junit</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-junit5-mockito</artifactId>
+            <artifactId>quarkus-junit-mockito</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -292,7 +285,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
-                    <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
+                    <argLine>@{argLine}</argLine>
                     <systemPropertyVariables>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                         <maven.home>${maven.home}</maven.home>
@@ -304,15 +297,6 @@
                 <artifactId>quarkus-maven-plugin</artifactId>
                 <version>${quarkus.version}</version>
                 <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>generate-code</goal>
-                            <goal>generate-code-tests</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
