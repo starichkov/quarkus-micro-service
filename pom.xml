@@ -56,12 +56,12 @@
         <maven.surefire.plugin.version>3.5.5</maven.surefire.plugin.version>
 
         <!-- Quarkus -->
-        <quarkus.version>3.34.2</quarkus.version>
+        <quarkus.version>3.34.6</quarkus.version>
 
         <!-- 3-rd party libraries -->
-        <lombok.version>1.18.42</lombok.version>
+        <lombok.version>1.18.46</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
-        <testcontainers.version>2.0.3</testcontainers.version>
+        <testcontainers.version>2.0.5</testcontainers.version>
 
         <!-- 3-rd party Maven plugins -->
         <maven.versions.plugin.version>2.21.0</maven.versions.plugin.version>
