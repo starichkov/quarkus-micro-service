@@ -71,7 +71,7 @@ services:
       retries: 10
       start_period: 5s
   prometheus:
-    image: quarkus-prometheus:v3.7.3
+    image: quarkus-prometheus:v3.13.2
     build:
       context: configuration/prometheus
       dockerfile: Dockerfile
