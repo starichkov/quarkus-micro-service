@@ -24,7 +24,7 @@ services:
       retries: 10
       start_period: 15s
   valkey:
-    image: valkey/valkey:7.2.11-alpine3.22
+    image: valkey/valkey:7.2.14-alpine3.24
     container_name: "quarkus-valkey72a"
     ports:
       - "6379:6379"
